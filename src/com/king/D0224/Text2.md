@@ -1,9 +1,11 @@
+## 867. 转置矩阵
 给你一个二维整数数组 matrix， 返回 matrix 的 转置矩阵 。
 
 矩阵的 转置 是指将矩阵的主对角线翻转，交换矩阵的行索引与列索引。
 
 ![图例](img.png)
 
+![图例](https://assets.leetcode.com/uploads/2021/02/10/hint_transpose.png)
 示例 1：
 
 ```
