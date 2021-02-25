@@ -51,6 +51,10 @@ public class Solution {
         }
         return true;
     }
+    /**
+     *	提交结果	运行时间	内存消耗	语言
+     * 	通过  	0 ms	36.4 MB	Java
+     */
 }
 
 
