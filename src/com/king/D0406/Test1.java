@@ -13,11 +13,13 @@ public class Test1 {
         if (nums.length <= 2) {
             return nums.length;
         }
-        for (int i = 0; i < nums.length; i++) {
+        int i = 0;
+        for (int n : nums)
+            if (i < 2 || n > nums[i-2])
+                nums[i++] = n;
+        return i;
 
-        }
 
-        return nums.length;
     }
 
     public static void main(String[] args) {
