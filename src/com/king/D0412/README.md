@@ -32,21 +32,27 @@
 1 <= nums.length <= 100
 0 <= nums[i] <= 10^9
 ```
+<hr>
+
+[783. 二叉搜索树节点最小距离](Test2.java)
 
 给你一个二叉搜索树的根节点 root ，返回 树中任意两不同节点值之间的最小差值 。
 
-注意：本题与 530：https://leetcode-cn.com/problems/minimum-absolute-difference-in-bst/ 相同
+[注意：](https://leetcode-cn.com/problems/minimum-absolute-difference-in-bst/)
 
-
+`本题与 530：[https://leetcode-cn.com/problems/minimum-absolute-difference-in-bst/]相同
+`
 
 示例 1：
 
+![图例](img/img.png "图例")
 
 输入：root = [4,2,6,1,3]
 输出：1
+
 示例 2：
 
-
+![图例](img/img_1.png "图例")
 输入：root = [1,0,48,null,null,12,49]
 输出：1
 
