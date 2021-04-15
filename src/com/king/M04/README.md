@@ -168,6 +168,26 @@
 最终的答案即为dp[n−1]，其中 n 是数组的长度。
 
 ![图示](img/img_2.png)
+```java
+class Solution {
+    public int rob(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return 0;
+        }
+        int length = nums.length;
+        if (length == 1) {
+            return nums[0];
+        }
+        int[] dp = new int[length];
+        dp[0] = nums[0];
+        dp[1] = Math.max(nums[0], nums[1]);
+        for (int i = 2; i < length; i++) {
+            dp[i] = Math.max(dp[i - 2] + nums[i], dp[i - 1]);
+        }
+        return dp[length - 1];
+    }
+}
+```
 
 ## a
 a
