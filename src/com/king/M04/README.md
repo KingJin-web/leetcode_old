@@ -189,6 +189,29 @@ class Solution {
 }
 ```
 
+上述方法使用了数组存储结果。考虑到每间房屋的最高总金额只和该房屋的前两间房屋的最高总金额相关，
+因此可以使用滚动数组，在每个时刻只需要存储前两间房屋的最高总金额。
+```java
+
+class Solution {
+    public int rob(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return 0;
+        }
+        int length = nums.length;
+        if (length == 1) {
+            return nums[0];
+        }
+        int first = nums[0], second = Math.max(nums[0], nums[1]);
+        for (int i = 2; i < length; i++) {
+            int temp = second;
+            second = Math.max(first + nums[i], second);
+            first = temp;
+        }
+        return second;
+    }
+}
+```
 ## a
 a
 
