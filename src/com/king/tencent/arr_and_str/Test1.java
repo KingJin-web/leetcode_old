@@ -9,6 +9,13 @@ import java.util.Arrays;
  * @create: 2021-04-17 14:54
  */
 public class Test1 {
+    /**
+     * 执行用时：0 ms, 在所有 Java 提交中击败了100.00%的用户
+     * 内存消耗：38.5 MB, 在所有 Java 提交中击败了73.42%的用户
+     * @param nums
+     * @param target
+     * @return
+     */
     public int[] twoSum(int[] nums, int target) {
         int[] arr = new int[2];
 
