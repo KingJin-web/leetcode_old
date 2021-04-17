@@ -167,7 +167,7 @@
 
 最终的答案即为dp[n−1]，其中 n 是数组的长度。
 
-![图示](img/img_2.png)
+![图示](img/7.gif)
 ```java
 class Solution {
     public int rob(int[] nums) {
