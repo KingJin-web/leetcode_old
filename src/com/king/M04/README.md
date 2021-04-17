@@ -212,7 +212,69 @@ class Solution {
     }
 }
 ```
-## a
-a
+## [14. 最长公共前缀](Test5.java)
+编写一个函数来查找字符串数组中的最长公共前缀。
+
+如果不存在公共前缀，返回空字符串 ""。
+
+
+
+示例 1：
+```
+输入：strs = ["flower","flow","flight"]
+输出："fl"
+```
+示例 2：
+```
+输入：strs = ["dog","racecar","car"]
+输出：""
+解释：输入不存在公共前缀。
+```
+
+提示：
+```
+0 <= strs.length <= 200
+0 <= strs[i].length <= 200
+strs[i] 仅由小写英文字母组成
+
+```
+
+#### 📖 文字题解
+方法一：横向扫描
+![img.png](img/img5_1.png)
+
+基于该结论，可以得到一种查找字符串数组中的最长公共前缀的简单方法。
+依次遍历字符串数组中的每个字符串，对于每个遍历到的字符串，更新最长公共前缀，
+当遍历完所有的字符串以后，即可得到字符串数组中的最长公共前缀。
+![img.png](img/img5_2.png)
+如果在尚未遍历完所有的字符串时，最长公共前缀已经是空串，则最长公共前缀一定是空串，
+因此不需要继续遍历剩下的字符串，直接返回空串即可。
+```java
+class Solution {
+    public String longestCommonPrefix(String[] strs) {
+        if (strs == null || strs.length == 0) {
+            return "";
+        }
+        String prefix = strs[0];
+        int count = strs.length;
+        for (int i = 1; i < count; i++) {
+            prefix = longestCommonPrefix(prefix, strs[i]);
+            if (prefix.length() == 0) {
+                break;
+            }
+        }
+        return prefix;
+    }
+
+    public String longestCommonPrefix(String str1, String str2) {
+        int length = Math.min(str1.length(), str2.length());
+        int index = 0;
+        while (index < length && str1.charAt(index) == str2.charAt(index)) {
+            index++;
+        }
+        return str1.substring(0, index);
+    }
+}
+```
 
 ## a
