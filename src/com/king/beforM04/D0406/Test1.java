@@ -1,4 +1,4 @@
-package com.king.D0406;
+package com.king.beforM04.D0406;
 
 /**
  * @program: leetcode
