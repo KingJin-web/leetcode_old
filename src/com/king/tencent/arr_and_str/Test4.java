@@ -5,6 +5,7 @@ import java.util.Arrays;
 /**
  * @program: leetcode
  * @description: 字符串转换整数 (atoi)
+ * 链接：https://leetcode-cn.com/leetbook/read/tencent/xxgggc/
  * @author: King
  * @create: 2021-04-18 15:46
  */
