@@ -10,11 +10,20 @@ public class TestMain {
 
     @Test
     public void longestPalindrome() {
-        String str = " String a = t3.longestPalindrome(\"121212123456789987654321121212121212123456789987654321121212121212123456789987654321121212121212123456789987654321121212121212123456789987654321121212121212123456789987654321121212121212123456789987654321121212121212123456789987654321121212121212123456789987654321121212\");\n";
-        System.out.println(t3.longestPalindrome(str));
+        String str = "addadasassss123456789987654321sssasassa";
+               System.out.println(t3.longestPalindrome(str));
     }
+    Test4 t4 = new Test4();
+
 
     @Test
-    public void longestPalindrome2() {
+    public void myAtoi() {
+        //System.out.println(t4.myAtoi("  -1234 aa"));
+        System.out.println(t4.myAtoi("aa"));
+    }
+
+    public static void main(String[] args) {
+        int a = Integer.parseInt("-123");
+        System.out.println(a);
     }
 }
