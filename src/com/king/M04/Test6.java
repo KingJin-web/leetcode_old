@@ -1,9 +1,6 @@
 package com.king.M04;
 
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
-import java.util.TreeSet;
+import java.util.*;
 
 /**
  * @program: leetcode
@@ -27,27 +24,42 @@ public class Test6 {
 
     }
 
+    int[] nums = new int[]{1, 1, 2};
+    //{-50, -49, -49, -46, -44, -42, -42, -41, -41, -41, -40, -40, -40, -38, -38, -37, -36, -36, -36, -35, -33, -32, -30, -29, -28, -27, -27, -27, -26, -26, -26, -26, -19, -17, -14, -14, -13, -13, -13, -13, -10, -10, -7, -7, -6, -6, -5, -5, -4, -3, -3, -3, 1, 1, 1, 2, 2, 3, 3, 5, 6, 8, 8, 9, 10, 10, 11, 12, 12, 13, 13, 14, 15, 16, 17, 17, 18, 18, 18, 18, 19, 22, 23, 24, 24, 25, 25, 26, 27, 28, 28, 28, 29, 30, 31, 32, 32, 32, 34, 35, 35, 37, 38, 39, 41, 41, 42, 42, 42, 43, 43, 44, 46, 46, 47, 49, 50, 50};
+
     private void run() {
-        int[] nums = new int[]{-50, -49, -49, -46, -44, -42, -42, -41, -41, -41, -40, -40, -40, -38, -38, -37, -36, -36, -36, -35, -33, -32, -30, -29, -28, -27, -27, -27, -26, -26, -26, -26, -19, -17, -14, -14, -13, -13, -13, -13, -10, -10, -7, -7, -6, -6, -5, -5, -4, -3, -3, -3, 1, 1, 1, 2, 2, 3, 3, 5, 6, 8, 8, 9, 10, 10, 11, 12, 12, 13, 13, 14, 15, 16, 17, 17, 18, 18, 18, 18, 19, 22, 23, 24, 24, 25, 25, 26, 27, 28, 28, 28, 29, 30, 31, 32, 32, 32, 34, 35, 35, 37, 38, 39, 41, 41, 42, 42, 42, 43, 43, 44, 46, 46, 47, 49, 50, 50};
         int len = removeDuplicates(nums);
-        System.out.println(Arrays.toString(nums));
+
+
+// 在函数里修改输入数组对于调用者是可见的。
+// 根据你的函数返回的长度, 它会打印出数组中 该长度范围内 的所有元素。
+        for (int i = 0; i < len; i++) {
+            System.out.print(nums[i] + ", ");
+        }
+
+
     }
 
     public int removeDuplicates(int[] nums) {
         TreeSet<Integer> set = new TreeSet<>();
-        for (int num : nums) {
+//        for (int num : nums) {
+//            set.add(num);
+//        }
+//        int i = 0;
+
+//        for (int n : set) {
+//
+//            nums[i++] = n;
+//            System.out.println(i);
+//        }
+
+        for (Integer num : nums) {
             set.add(num);
         }
-        System.out.println(set);
         int i = 0;
-        for (int n : set) {
-
-            nums[i++] = n;
-            System.out.println(i);
+        for (Integer integer : set) {
+            nums[i++] = integer;
         }
-
-
-        System.out.println(Arrays.toString(nums));
         return set.size();
     }
 
@@ -81,6 +93,7 @@ public class Test6 {
 
     /**
      * 执行用时为 0 ms 的范例
+     *
      * @param nums
      * @return
      */
