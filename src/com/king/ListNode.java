@@ -30,11 +30,14 @@ public class ListNode {
     }
 
     public void print() {
-        System.out.print(this.val + "-->");
+
         if (this.next != null) {
+            System.out.print(this.val + "-->");
             this.next.print();
+        }else{
+            System.out.println(this.val);
         }
-        System.out.println();
+
     }
 
     public void add(int num) {
