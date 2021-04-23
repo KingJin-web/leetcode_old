@@ -196,7 +196,7 @@ bbbba
 54
 ```
 
-## [7-4 Split (20 分)](f,cpp)
+## [7-4 Split (20 分)](f.cpp)
 
 Little Zhang has an array **a** which length is **n**, and the index of this array **a** starts from zero. As Little Zhang is bored, he decides to play with the array.
 
@@ -245,7 +245,7 @@ For the sample test case, the process of all the split operations are shown in t
 
 ![样例.png](https://images.ptausercontent.com/fff1b66e-08b7-40bd-b40f-d7dd3bfc9296.png)
 
-## [7-5 收集宝物 (30 分)](g,cpp)
+## [7-5 收集宝物 (30 分)](g.cpp)
 
 小明有一张藏宝图，上面有n*m个房间，每个房间里面都有一个有一定价值的宝物，小明只能从左上角的房间进入，且每次只能向右或向下行走，最终只能从最右下的房间出来。经过某个房间时，如果该房间中的宝物价值比小明手中任何宝物价值都大，小明就可以拿走它，当然，也可以不拿。当小明走到出口时，如果他手中的宝贝恰好是k件，则这些宝物就可以送给小明。请你帮小明算一算，他有多少种不同的行动方案能获得这k件宝贝。
 
