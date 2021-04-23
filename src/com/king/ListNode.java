@@ -11,6 +11,7 @@ public class ListNode {
     ListNode next;
 
     public ListNode() {
+
     }
 
     public ListNode(int val) {
@@ -26,32 +27,39 @@ public class ListNode {
      * 将数组转为链表
      * LinkList CreateListByTailInsert(int *a, int n) //尾插法
      * {
-     *
-     *     LinkList head = (ListNode *)malloc(sizeof(ListNode)); //生成头结点
-     *     head->next = NULL;
-     *     head->data = 0; // 不要
-     *     ListNode *tailNode = head;
-     *     for (int i = 0; i < n; i++) //  head
-     *     {
-     *         ListNode *newnode = (ListNode *)malloc(sizeof(ListNode)); //生成头结点
-     *         newnode->next = NULL;
-     *         newnode->data = a[i];
-     *         tailNode->next = newnode;
-     *         tailNode = newnode;
-     *     }
-     *
-     *     return head; //返回头指针
+     * <p>
+     * LinkList head = (ListNode *)malloc(sizeof(ListNode)); //生成头结点
+     * head->next = NULL;
+     * head->data = 0; // 不要
+     * ListNode *tailNode = head;
+     * for (int i = 0; i < n; i++) //  head
+     * {
+     * ListNode *newnode = (ListNode *)malloc(sizeof(ListNode)); //生成头结点
+     * newnode->next = NULL;
+     * newnode->data = a[i];
+     * tailNode->next = newnode;
+     * tailNode = newnode;
      * }
+     * <p>
+     * return head; //返回头指针
+     * }
+     *
      * @param arr
      */
     public ListNode(int[] arr) {
-        ListNode root = new ListNode(arr[0]);
-        ListNode other = root;
-        for (int i = 1; i < arr.length; i++) {
+        if (arr.length < 2) {
+            this.val = arr[0];
+            return;
+        }
+        this.val = arr[0];
+        this.next = new ListNode(arr[1]);
+        ListNode other = this.next;
+        for (int i = 2; i < arr.length; i++) {
             ListNode temp = new ListNode(arr[i]);
             other.next = temp;
             other = temp;
         }
+
     }
 
     public ListNode arrayToListNode(int[] s) {
