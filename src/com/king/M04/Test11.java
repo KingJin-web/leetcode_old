@@ -15,7 +15,8 @@ public class Test11 {
         //[5,6,4]
         int arr[] = new int[]{2,4,3};
         ListNode l1 = new ListNode(arr);
-        System.out.println(l1);
+
+        l1.print();
 
         ListNode l2 = new ListNode(2,l1);
 

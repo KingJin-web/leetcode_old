@@ -34,6 +34,7 @@ public class ListNode {
         if (this.next != null) {
             this.next.print();
         }
+        System.out.println();
     }
 
     public void add(int num) {
