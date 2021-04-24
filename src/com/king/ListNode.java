@@ -7,8 +7,9 @@ package com.king;
  * @create: 2021-04-23 20:59
  */
 public class ListNode {
-    int val;
-    ListNode next;
+
+   public int val;
+   public ListNode next;
 
     public ListNode() {
 
@@ -75,6 +76,19 @@ public class ListNode {
         }
     }
 
+    /**
+     * 插入
+     * @param num
+     */
+    public void add(int num) {
+        ListNode newNode = new ListNode(num);
+        if (this.next == null) {
+            this.next = newNode;
+        } else {
+            this.next.add(num);
+        }
+    }
+
     public ListNode arrayToListNode(int[] s) {
         ListNode root = new ListNode(s[0]);
         ListNode other = root;
@@ -87,14 +101,7 @@ public class ListNode {
     }
 
 
-    public void add(int num) {
-        ListNode newNode = new ListNode(num);
-        if (this.next == null) {
-            this.next = newNode;
-        } else {
-            this.next.add(num);
-        }
-    }
+
 
     @Override
     public String toString() {
