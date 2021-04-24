@@ -62,6 +62,19 @@ public class ListNode {
 
     }
 
+    /**
+     * 1-->2-->3-->4-->5-->6-->8
+     * 单链表的打印
+     */
+    public void println() {
+        if (this.next != null) {
+            System.out.print(this.val + "-->");
+            this.next.println();
+        } else {
+            System.out.println(this.val);
+        }
+    }
+
     public ListNode arrayToListNode(int[] s) {
         ListNode root = new ListNode(s[0]);
         ListNode other = root;
@@ -73,16 +86,6 @@ public class ListNode {
         return root;
     }
 
-    public void print() {
-
-        if (this.next != null) {
-            System.out.print(this.val + "-->");
-            this.next.print();
-        } else {
-            System.out.println(this.val);
-        }
-
-    }
 
     public void add(int num) {
         ListNode newNode = new ListNode(num);

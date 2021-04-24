@@ -13,11 +13,12 @@ public class Test11 {
     public static void main(String[] args) {
         //[2,4,3]
         //[5,6,4]
-        int[] arr = new int[]{1};
+        int[] arr = new int[]{1,2,3,4,5,6,8};
         ListNode l1 = new ListNode(arr);
 
 
         System.out.println(l1);
+        l1.print();
 //        ListNode l2 = new ListNode(2,l1);
 //
 //        System.out.println(l2);
