@@ -13,7 +13,7 @@ public class TreeNode {
     public TreeNode left;
     public TreeNode right;
 
-    TreeNode() {
+    public TreeNode() {
     }
 
     TreeNode(int val) {
@@ -49,7 +49,7 @@ public class TreeNode {
         }
     }
 
-    public TreeNode(Integer[] integers) {
+    public  TreeNode(Integer[] integers) {
         LinkedList<TreeNode> queue = new LinkedList<>();
         int index = 0;
         queue.addLast(this);
