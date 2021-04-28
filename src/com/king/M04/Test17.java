@@ -3,6 +3,7 @@ package com.king.M04;
 /**
  * @program: leetcode
  * @description: 633. 平方数之和
+ * https://leetcode-cn.com/problems/sum-of-square-numbers/
  * @author: King
  * @create: 2021-04-28 16:20
  */

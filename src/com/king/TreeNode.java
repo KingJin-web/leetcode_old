@@ -69,7 +69,9 @@ public class TreeNode {
                 index++;
             }
         }
+        System.out.println(queue);
     }
+
 
     @Override
     public String toString() {
