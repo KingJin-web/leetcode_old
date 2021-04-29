@@ -36,16 +36,16 @@ public class Test20 {
         //初始条件：第 0 个石头可以跳 1 步
         dp[0][1] = true;
 
-        for(int i = 1; i < len; i++){
+        for (int i = 1; i < len; i++) {
             boolean flag = false;
             //因为 石头 i 最大只能跳 i + 1 步，因此 前面的石头 j 到达 石头 i 的距离必须 <= i
-            for(int j = i - 1; j >= 0; j--){
+            for (int j = i - 1; j >= 0; j--) {
                 int diff = stones[i] - stones[j];
-                if(diff > i){
+                if (diff > i) {
                     break;
                 }
                 //对于 石头 j ，它需要跳 diff 步
-                if(dp[j][diff]){
+                if (dp[j][diff]) {
                     dp[i][diff - 1] = true;
                     dp[i][diff] = true;
                     dp[i][diff + 1] = true;
@@ -53,7 +53,7 @@ public class Test20 {
                 }
             }
             //当到达了终点 而 flag ，表示无法从前面的任意石头跳到终点，返回 false
-            if(i == len - 1 && !flag){
+            if (i == len - 1 && !flag) {
                 return false;
             }
         }
