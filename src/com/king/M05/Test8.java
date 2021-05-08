@@ -3,6 +3,7 @@ package com.king.M05;
 /**
  * @program: leetcode
  * @description: 1720. 解码异或后的数组
+ * 考试
  * https://leetcode-cn.com/problems/decode-xored-array/
  * @author: King
  * @create: 2021-05-06 22:04

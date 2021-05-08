@@ -7,7 +7,7 @@ package com.king.MyJava.Second;
  * @create: 2021-04-21 16:07
  */
 public class Circle implements Shape {
-    double pI = 3.14;
+
     private double r;
 
     public Circle(double r) {
