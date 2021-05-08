@@ -3,6 +3,7 @@ package com.king.MyJava.third;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.util.Date;
 
 /**
  * @program: leetcode
@@ -43,7 +44,7 @@ public class MyFrame2 extends JFrame {
     }
 
     public static void main(String[] args) {
-        new MyFrame2("My 3rd Window");
+        new MyFrame2("计科1801班 金鹏 38 " + new Date());
     }
 }
 

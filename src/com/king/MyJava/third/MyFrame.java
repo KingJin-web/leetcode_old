@@ -3,6 +3,7 @@ package com.king.MyJava.third;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.util.Date;
 
 /**
  * @program: leetcode
@@ -41,6 +42,6 @@ public class MyFrame extends JFrame {
     }
 
     public static void main(String[] args) {
-        new MyFrame("Hello");
+        new MyFrame("计科1801班 金鹏 38 " + new Date());
     }
 }
