@@ -1,4 +1,4 @@
-package com.king.MyJava.third;
+package MyJava.third;
 
 import javax.swing.*;
 import java.awt.*;

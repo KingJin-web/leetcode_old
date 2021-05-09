@@ -1,4 +1,4 @@
-package com.king.MyJava.Second;
+package MyJava.Second;
 
 /**
  * @program: leetcode
