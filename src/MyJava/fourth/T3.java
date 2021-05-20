@@ -1,9 +1,6 @@
 package MyJava.fourth;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.util.Scanner;
 
 /**
@@ -36,7 +33,33 @@ public class T3 {
 
     }
 
+    public static void writeTxt2(String writeFile) {
+        File file = new File(writeFile);
+        StringBuilder s = new StringBuilder();
+        try (
+
+                InputStreamReader in = new InputStreamReader(System.in);
+                BufferedReader bin = new BufferedReader(in);
+                BufferedWriter bw = new BufferedWriter(new FileWriter(file, true));
+        ) {
+
+            String ins;
+            System.out.println("请输入内容 输入exit结束");
+            while (!(ins = bin.readLine()).equals("exit")) {
+                //System.out.println(ins.equals(""));
+                s.append(ins).append("\n");
+            }
+            System.out.println("Bye");
+            bw.write(s.toString());
+            bw.flush();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+
     public static void main(String[] args) {
-        writeTxt("D:\\write.txt");
+        writeTxt2("D:\\write.txt");
     }
 }
