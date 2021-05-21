@@ -1,4 +1,4 @@
-package com.king.M04;
+package com.king.M05;
 
 import java.util.*;
 
