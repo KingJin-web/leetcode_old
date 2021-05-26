@@ -15,8 +15,37 @@ public class Test23 {
         return Arrays.copyOf(arr, k);
     }
 
+    public void 打印长方形(){
+        int length = 9;
+        int height = 7;
+        for (int i=0;i<height;i++) {
+            for (int j=0;j<length;j++) {
+                if ( i == 0 ) {
+                    System.out.print("*");
+                }
+                else if (i == height-1) {
+                    System.out.print("*");
+                }
+                else if (j == 0 || j == length-1) {
+                    System.out.print("*");
+                }
+                else {
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+        }
+
+
+    }
+
     public static void main(String[] args) {
         Test23 test23 = new Test23();
+        test23.打印长方形();
+
+
+
+
         int[] arr = {3,2,1};
         int k = 2;
         int[] a = test23.getLeastNumbers(arr,k);
