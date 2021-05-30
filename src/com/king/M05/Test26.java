@@ -21,6 +21,6 @@ public class Test26 {
 
     public static void main(String[] args) {
         Test26 test26 = new Test26();
-        System.out.println(test26.addBinary("11","1"));
+        System.out.println(test26.addBinary("11", "1"));
     }
 }
