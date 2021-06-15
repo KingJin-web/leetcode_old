@@ -10,35 +10,48 @@ public class T2 {
 
 
     public static void main(String[] args) {
-        T2Test t1 = new T2Test(1);
-        T2Test t2 = new T2Test(2);
-        new Thread(t1).start();
-        new Thread(t2).start();
+
+        Thread t1 = new Thread(new T2A());
+        t1.setName("偶数线程");
+        t1.start();
+        Thread t2 = new Thread(new T2B());
+        t2.start();
         ;
     }
 }
 
-class T2Test implements Runnable {
-    private int k;
-
-    public T2Test(int k) {
-        this.k = k;
-    }
+class T2A implements Runnable {
 
     @Override
     public void run() {
-
-        for (int i = 0; i < 40; i += k) {
+        for (int i = 0; i < 40; i++) {
             if (i % 2 == 0) {
                 System.out.println("偶数" + i);
-            } else {
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+
+        }
+    }
+}
+
+class T2B implements Runnable {
+
+    @Override
+    public void run() {
+        for (int i = 0; i < 40; i++) {
+            if (i % 2 != 0) {
                 System.out.println("奇数" + i);
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
             }
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
+
         }
     }
 }
