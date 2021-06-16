@@ -12,9 +12,8 @@ public class T2 {
     public static void main(String[] args) {
 
         Thread t1 = new Thread(new T2A());
-        t1.setName("偶数线程");
-        t1.start();
         Thread t2 = new Thread(new T2B());
+        t1.start();
         t2.start();
         ;
     }
