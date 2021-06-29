@@ -8,14 +8,19 @@ package com.king.M06;
  * @create: 2021-06-27 21:14
  */
 public class Test10 {
-    public int fib(int n) {
+    /**
+     * 执行用时：0 ms, 在所有 Java 提交中击败了100.00%的用户
+     * 内存消耗：35 MB, 在所有 Java 提交中击败了93.09%的用户
+     * @param n
+     * @return
+     */
+    public int fib1(int n) {
         long[] f = new long[]{0, 1, 1, 2};
         if (n < f.length)
             return (int) f[n];
 
         for (int i = 3; i <= n; i++) {
-            f[3] = (long) ((f[2] + f[1]) % (Math.pow(10, 9) + 7));
-
+            f[3] = ((f[2] + f[1]) % 1000000007);
             f[1] = f[2];
             f[2] = f[3];
         }
@@ -23,7 +28,21 @@ public class Test10 {
         return (int) f[3];
     }
 
-    public int fib1(int n) {
+    public int fib(int n) {
+        long[] f = new long[]{0, 1, 1};
+        if (n < f.length)
+            return (int) f[n];
+
+        for (int i = 2; i <= n; i++) {
+            f[2] = ((f[1] + f[0]) % 1000000007);
+            f[0] = f[1];
+            f[1] = f[2];
+        }
+
+        return (int) f[2];
+    }
+
+    public int fib2(int n) {
         if (n < 2) return n;
         long[] result = new long[n + 1];
         result[0] = 0;
