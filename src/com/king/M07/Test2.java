@@ -9,7 +9,8 @@ import java.util.OptionalInt;
 
 /**
  * @program: leetcode
- * @description:
+ * @description: 1711. 大餐计数
+ * https://leetcode-cn.com/problems/count-good-meals/
  * @author: King
  * @create: 2021-07-07 20:50
  */
