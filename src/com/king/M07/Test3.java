@@ -15,20 +15,22 @@ import java.util.Map;
 public class Test3 {
     public static Test3 t3 = new Test3();
 
+    /**
+     * 执行用时：15 ms, 在所有 Java 提交中击败了18.50%的用户
+     * 内存消耗：43.3 MB, 在所有 Java 提交中击败了59.32%的用户
+     * @param nums
+     * @return
+     */
     public int majorityElement(int[] nums) {
-
         int l = nums.length / 2;
         Map<Integer, Integer> map = new HashMap<>();
         for (int num : nums) {
             map.put(num, map.getOrDefault(num, 0) + 1);
-
             if(map.get(num) > l){
                 return num;
             }
         }
-
-        System.out.println(map);
-        return 0;
+        return -1;
     }
 
     public static void main(String[] args) {
