@@ -12,7 +12,9 @@ import java.util.Map;
  * @create: 2021-07-13 00:34
  */
 public class Test8 {
+
     public int[] intersect(int[] nums1, int[] nums2) {
+        System.out.println(Arrays.toString(nums1));
         if (nums1.length > nums2.length) {
             return intersect(nums2, nums1);
         }
