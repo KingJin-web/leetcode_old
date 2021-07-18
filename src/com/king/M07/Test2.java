@@ -72,7 +72,6 @@ public class Test2 {
         return res;
     }
 
-    int[] arr = Helper.getArrays();
     public static boolean isPowerOfTwo(int n) {
         return n > 0 && (n & (n - 1)) == 0;
     }

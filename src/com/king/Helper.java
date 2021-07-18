@@ -14,7 +14,15 @@ public class Helper {
         return nums;
     }
 
-    public static void print(Object o){
+    public static String[] getArrays(String... s) {
+        return s;
+    }
+
+    public static List<String> getList(String... s) {
+        return Arrays.asList(s);
+    }
+
+    public static void print(Object o) {
         System.out.println(o);
     }
 //    public static List<String> getArrays(String nums) {
