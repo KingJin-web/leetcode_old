@@ -29,6 +29,14 @@ public class Test16 {
         ListNode listNode = new ListNode(Helper.getArrays(1, 2, 3, 4, 5));
         ListNode listNode1 = test15.reverseList(listNode);
 
-        System.out.println(listNode1);
+        int[] a = new int[]{1, 3, 66, 99, 8888, 22, 11, 44, 30};
+        String[] as = new String[]{"12", "12364", "45687464", "326594"};
+        System.out.printf("%-8s\t%-8s\t%-8s\t%-8s\n", "aaaa", "aaaa", "aaaa", "aaaa");
+        for (int i = 0; i < as.length; i++) {
+            System.out.printf("%-8d\t%-8s\t%-8d\t%-8d\n", a[i], as[i], a[i + 1], a[i + 2]);
+        }
+
+
+        //System.out.println(listNode1);
     }
 }
