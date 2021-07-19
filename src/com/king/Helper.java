@@ -25,6 +25,26 @@ public class Helper {
     public static void print(Object o) {
         System.out.println(o);
     }
+
+    public static void print(Object[] o) {
+        System.out.println(Arrays.toString(o));
+    }
+
+    public static void print(Object[]... o) {
+        System.out.println(Arrays.deepToString(o));
+    }
+
+    public static void print(int[] ...s) {
+        System.out.println(Arrays.deepToString(s));
+    }
+
+    public static void print(String[] ...s) {
+        System.out.println(Arrays.deepToString(s));
+    }
+
+    public static void print(char[] ...chars) {
+        System.out.println(Arrays.deepToString(chars));
+    }
 //    public static List<String> getArrays(String nums) {
 //        return Arrays.asList(nums);
 //    }
