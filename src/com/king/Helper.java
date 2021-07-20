@@ -45,6 +45,12 @@ public class Helper {
     public static void print(char[] ...chars) {
         System.out.println(Arrays.deepToString(chars));
     }
+
+    public static void printList(List<List<Integer>> o) {
+        for (List<Integer> l: o) {
+            System.out.println(l);
+        }
+    }
 //    public static List<String> getArrays(String nums) {
 //        return Arrays.asList(nums);
 //    }
