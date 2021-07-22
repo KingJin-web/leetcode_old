@@ -37,29 +37,34 @@ public class Helper {
         System.out.println(Arrays.deepToString(o));
     }
 
-    public static void print(int[] ...s) {
+    public static void print(int[]... s) {
         System.out.println(Arrays.deepToString(s));
     }
 
-    public static void print(String[] ...s) {
+    public static void print(String[]... s) {
         System.out.println(Arrays.deepToString(s));
     }
 
-    public static void print(char[] ...chars) {
+    public static void print(char[]... chars) {
         System.out.println(Arrays.deepToString(chars));
     }
 
     public static void printList(List<List<Integer>> o) {
-        for (List<Integer> l: o) {
+        for (List<Integer> l : o) {
             System.out.println(l);
         }
     }
-//    public static List<String> getArrays(String nums) {
-//        return Arrays.asList(nums);
-//    }
+
 
     static final Unsafe unsafe = getUnsafe();
     static final boolean is64bit = true; // auto detect if possible.
+
+    /**
+     * 返回变量的地址
+     *
+     * @param label
+     * @param objects
+     */
     public static void printAddresses(String label, Object... objects) {
         System.out.print(label + ": 0x");
         long last = 0;
@@ -76,7 +81,7 @@ public class Helper {
                     if (i2 > last)
                         System.out.print(", +" + Long.toHexString(i2 - last));
                     else
-                        System.out.print(", -" + Long.toHexString( last - i2));
+                        System.out.print(", -" + Long.toHexString(last - i2));
                     last = i2;
                 }
                 break;
@@ -93,6 +98,26 @@ public class Helper {
             return (Unsafe) theUnsafe.get(null);
         } catch (Exception e) {
             throw new AssertionError(e);
+        }
+    }
+
+    /**
+     * 返回类中的所有变量名
+     *
+     * @param obj
+     */
+    public static void getName(Object obj) {
+        Field[] fields = obj.getClass().getDeclaredFields();
+        for (Field field : fields)
+            System.out.println("变量名：" + field.getName());
+    }
+
+    public static void printFieldNames(Object obj, Object... foos) {
+        List<Object> fooList = Arrays.asList(foos);
+        for (Field field : obj.getClass().getFields()) {
+
+            System.out.println(field.getName());
+
         }
     }
 }

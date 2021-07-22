@@ -9,6 +9,7 @@ package com.king;
 
 import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
@@ -74,6 +75,12 @@ public class Main {
             Integer i4 = 200;
             Integer i5 = -100;
             Integer i6 = -100;
+
+            Helper.printAddresses("i1", i1);
+            Helper.printAddresses("i2", i2);
+            Helper.printAddresses("i3", i3);
+            Helper.printAddresses("i4", i4);
+            Helper.getName(i1);
 
             System.out.println(i1 == i2);
             System.out.println(i3 == i4);
