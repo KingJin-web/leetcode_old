@@ -22,6 +22,6 @@ public class Test13 {
 
     public static void main(String[] args) {
         Test13 t13 = new Test13();
-        Helper.print(t13.maxSubArray(Helper.getArrays(-2,1,-3,4,-1,2,1,-5,4)));
+        Helper.print(t13.maxSubArray(Helper.getArrays(-2, 1, -3, 4, -1, 2, 1, -5, 4)));
     }
 }

@@ -33,6 +33,27 @@ public class Helper {
         System.out.println(o);
     }
 
+    public static void print(int[] o) {
+        print(toString(o, 5));
+    }
+
+    private static String toString(int[] o, int l) {
+        if (o == null)
+            return "null";
+        int iMax = o.length - 1;
+        if (iMax == -1)
+            return "[]";
+        StringBuilder b = new StringBuilder();
+        for (int i = 1; i < o.length; ++i) {
+            b.append(o[i - 1]).append(", ");
+            if (i % l == 0) {
+                b.append('\n');
+            }
+        }
+        b.append(o[iMax]).append("\n");
+        return b.toString();
+    }
+
     public static void print(boolean[] o) {
         print(print(o, 5));
     }
