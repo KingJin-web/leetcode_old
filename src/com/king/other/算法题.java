@@ -6,7 +6,7 @@ package com.king.other;
  * @author: King
  * @create: 2021-07-10 14:45
  */
-public class ç®—æ³•é¢˜ {
+public class Ëã·¨Ìâ {
 
     public static void main(String[] args) {
         int count = 0;

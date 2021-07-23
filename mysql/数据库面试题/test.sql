@@ -114,11 +114,101 @@ where not EXISTS(
 
 2002 :
 数据来源：根据题目所用表格导入自建，说明所用数据库（限定使用MYSQL / ORACLE / SQLSERVER）
+select *
+from sheet2;
 1) 查询新进类型中，不同原因的人数以及人数排名，结果输出 原因、人数、排名
+select 变动原因, count(*) as 人数, row_number() over ( order by count(*) desc ) as 排名
+from sheet2
+where 类型 = '新进'
+group by 变动原因;
 
 2)查询2009年度，每个月的公司变化人数（新进人数-离职人数），结果输出年度、月度、变化人数，结果根据年度、月度升序排序
+select 年度, sheet2.月度, ifnull(a.新进人数, 0) - (count(*) - ifnull(a.新进人数, 0)) as 变化人数
+from sheet2
+         left join
+     (select 月度, count(*) as 新进人数
+      from sheet2
+      where 类型 = '新进'
+        and 年度 = 2009
+      group by 月度) as a on sheet2.月度 = a.月度
+where 年度 = 2009
+group by 月度
+order by 年度, 月度;
+
+
+select 类型, 月度, count(*) as 新进人数
+from sheet2
+where 类型 = '新进'
+  and 年度 = 2009
+group by 月度;
+select 类型, 月度, count(*) as 离职人数
+from sheet2
+where 类型 = '离职'
+  and 年度 = 2009
+group by 月度
+order by 年度, 月度;
 3)查询累计到每个年度的离职人数,结果输出年度、累计离职人数（注意是累计不是合计）
+select 年度,
+       (select sum(b.num) summary
+        from b
+       ) as summary
+from (select 年度, count(*) as num
+      from sheet2
+      where 类型 = '离职'
+      group by 年度
+     ) as b;
+
+set @sumSalary := 0;
+select b.年度, b.num, @sumSalary := @sumSalary + b.num 累计
+from (select 年度, count(*) as num
+      from sheet2
+      where 类型 = '离职'
+      group by 年度
+     ) as b;
+
+
+select b.年度, b.num, @sumSalary := @sumSalary + b.num 累计
+from (select 年度, count(*) as num
+      from sheet2
+      where 类型 = '离职'
+      group by 年度
+     ) as b
+         join (select @sumSalary := 0) as sS;
+
+
+select 年度, count(*) as sum
+from sheet2
+where 类型 = '离职'
+group by 年度;
 4)查询2009年度，每个月的离职人数以及环比增长率，结果根据年度、月度升序排序
+
+select 年度, 月度, count(1) as 本月离职数
+from sheet2
+where 年度 = 2009
+  and 类型 = '离职'
+group by 月度;
+
+select a.年度, a.月度, b.本月离职数 - a.本月离职数 as c, (b.本月离职数 - a.本月离职数) / a.本月离职数 as 环比
+from (select 年度, 月度, count(1) as 本月离职数
+      from sheet2
+      where 年度 = 2009
+        and 类型 = '离职'
+      group by 月度) as a
+         inner join (select 年度, 月度, count(1) as 本月离职数
+                     from sheet2
+                     where 年度 = 2009
+                       and 类型 = '离职'
+                     group by 月度) as b on a.年度 = b.年度 and a.月度 = b.月度 - 1;
+
+select 月度, num 离职人数, s
+from (select 月度, count(*) as num, (@lastNum := count(*)) as s
+      from sheet2
+               join (select @lastNum := 0) as b
+      where 年度 = 2009
+        and 类型 = '离职'
+      group by 月度) as a
+order by 月度;
+
 
 数据来源：附件table2，导入数据库
 
@@ -139,12 +229,24 @@ insert into a value (null, '赵六');
 insert into a value (null, '田七');
 
 3) 删除两条输出，输出删除语句
-delete from a where name = '张三';
-delete from a where name = '李四';
+delete
+from a
+where name = '张三';
+delete
+from a
+where name = '李四';
 4) 根据主键更新两条数据，输出更新语句
-update a set name = '蔡徐坤' where id = 1;
-update a set name = '吴亦凡' where id = 2;
+update a
+set name = '蔡徐坤'
+where id = 1;
+update a
+set name = '吴亦凡'
+where id = 2;
 5) 查询一条数据，建成视图，输出建视图语句
-create view v1 as select * from a where id = 1;
-select * from v1;
+create view v1 as
+select *
+from a
+where id = 1;
+select *
+from v1;
 

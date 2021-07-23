@@ -6,7 +6,7 @@ package com.king.AiExperiment.First;
  * @author: King
  * @create: 2021-04-05 17:18
  */
-public class è®¡ç§‘1801_é‡‘é¹_38 {
+public class ¼Æ¿Æ1801_½ğÅô_38 {
     public static void main(String[] args) {
         int nDisks = 5;
         doTowers(nDisks, 'A', 'B', 'C');
@@ -14,10 +14,10 @@ public class è®¡ç§‘1801_é‡‘é¹_38 {
 
     public static void doTowers(int topN, char from, char inter, char to) {
         if (topN == 1) {
-            System.out.println("ç›˜å­ 1 ä» " + from + " åˆ° " + to);
+            System.out.println("ÅÌ×Ó 1 ´Ó " + from + " µ½ " + to);
         } else {
             doTowers(topN - 1, from, to, inter);
-            System.out.println("ç›˜å­ " + topN + " ä» " + from + " åˆ° " + to);
+            System.out.println("ÅÌ×Ó " + topN + " ´Ó " + from + " µ½ " + to);
             doTowers(topN - 1, inter, from, to);
         }
     }

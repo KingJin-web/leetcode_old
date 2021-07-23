@@ -21,12 +21,49 @@ public class Helper {
         return s;
     }
 
+    public static int[][] getArrays(int[]... arr) {
+        return arr;
+    }
+
     public static List<String> getList(String... s) {
         return Arrays.asList(s);
     }
 
     public static void print(Object o) {
         System.out.println(o);
+    }
+
+    public static void print(boolean[] o) {
+        print(print(o, 5));
+    }
+
+    private static String print(boolean[] o, int l) {
+        if (o == null)
+            return "null";
+        int iMax = o.length - 1;
+        if (iMax == -1)
+            return "[]";
+        StringBuilder b = new StringBuilder();
+        for (int i = 1; i < o.length; ++i) {
+            b.append(o[i - 1]).append(", ");
+            if (i % l == 0) {
+                b.append('\n');
+            }
+        }
+        b.append(o[iMax]).append("\n");
+        return b.toString();
+    }
+
+    public static void print(Object[] o, int l) {
+
+        for (int i = 1; i < o.length; ++i) {
+            System.out.print(o[i - 1] + ", ");
+            if (i % l == 0) {
+                System.out.print('\n');
+            }
+        }
+        System.out.println(o[o.length - 1]);
+
     }
 
     public static void print(Object[] o) {
@@ -48,6 +85,7 @@ public class Helper {
     public static void print(char[]... chars) {
         System.out.println(Arrays.deepToString(chars));
     }
+
 
     public static void printList(List<List<Integer>> o) {
         for (List<Integer> l : o) {
