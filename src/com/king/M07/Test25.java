@@ -2,6 +2,7 @@ package com.king.M07;
 
 import com.king.Helper;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -85,6 +86,18 @@ public class Test25 {
     public static void main(String[] args) {
         Test25 t25 = new Test25();
         Helper.print(t25.twoSum(Helper.getArrays(2, 7, 11, 15), 9));
-        ;
+
+    }
+
+
+    public static class SuperTest extends Date {
+        private static final long serialVersionUID = 1L;
+        private void test(){
+            System.out.println(super.getClass().getName());
+        }
+
+        public static void main(String[]args){
+            new SuperTest().test();
+        }
     }
 }
