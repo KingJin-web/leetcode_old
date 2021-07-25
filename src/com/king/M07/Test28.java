@@ -15,12 +15,27 @@ import java.util.Set;
 public class Test28 {
     static Test28 t28 = new Test28();
 
+    public String removeDuplicates(String S) {
+        int index = -1;
+        char[] chars = S.toCharArray();
+        for (int i = 0; i < chars.length; i++) {
+            if (index >= 0 && chars[index] == chars[i]) {
+                index--;
+            } else {
+                index++;
+                chars[index] = chars[i];
+            }
+        }
+        return String.copyValueOf(chars, 0, index + 1);
+    }
+
     /**
      * ‘Ÿ¥Œ≥¨ ±
+     *
      * @param S
      * @return
      */
-    public String removeDuplicates(String S) {
+    public String removeDuplicates2(String S) {
         for (int i = 1; i < S.length(); ++i) {
             if (S.charAt(i - 1) == S.charAt(i)) {
                 S = S.substring(0, i - 1) + S.substring(i + 1);
