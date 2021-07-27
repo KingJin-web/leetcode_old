@@ -108,12 +108,23 @@ public class Helper {
     }
 
 
-    public static void printList(List<List<Integer>> o) {
+    public static void print(List<List<Integer>> o) {
         for (List<Integer> l : o) {
             System.out.println(l);
         }
     }
 
+    public static void printList(List l) {
+
+        for (Object o : l) {
+            if (o.getClass().getSimpleName().endsWith("List")) {
+                printList((List) o);
+            } else {
+                System.out.print(o + " ");
+            }
+        }
+        System.out.println();
+    }
 
     static final Unsafe unsafe = getUnsafe();
     static final boolean is64bit = true; // auto detect if possible.
