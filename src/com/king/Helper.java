@@ -2,8 +2,11 @@ package com.king;
 
 import sun.misc.Unsafe;
 
+import java.lang.reflect.Array;
 import java.lang.reflect.Field;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 
 /**
@@ -29,50 +32,39 @@ public class Helper {
         return Arrays.asList(s);
     }
 
+    /**
+     * https://www.cnblogs.com/fjdingsd/p/5272242.html
+     *
+     * @param o
+     */
     public static void print(Object o) {
-        System.out.println(o);
-    }
-
-    public static void print(int[] o) {
-        print(toString(o, 5));
-    }
-
-    private static String toString(int[] o, int l) {
-        if (o == null)
-            return "null";
-        int iMax = o.length - 1;
-        if (iMax == -1)
-            return "[]";
-        StringBuilder b = new StringBuilder();
-        for (int i = 1; i < o.length; ++i) {
-            b.append(o[i - 1]).append(", ");
-            if (i % l == 0) {
-                b.append('\n');
+        if (isArray(o)) {
+            Collection<Object> coll = new ArrayList<>();
+            int length = Array.getLength(o);
+            for (int i = 0; i < length; i++) {
+                Object value = Array.get(o, i);
+                coll.add(value);
             }
+            Helper.print(coll);
+        } else {
+            System.out.println(o);
         }
-        b.append(o[iMax]).append("\n");
-        return b.toString();
+
     }
 
-    public static void print(boolean[] o) {
-        print(print(o, 5));
-    }
-
-    private static String print(boolean[] o, int l) {
-        if (o == null)
-            return "null";
-        int iMax = o.length - 1;
-        if (iMax == -1)
-            return "[]";
-        StringBuilder b = new StringBuilder();
-        for (int i = 1; i < o.length; ++i) {
-            b.append(o[i - 1]).append(", ");
-            if (i % l == 0) {
-                b.append('\n');
+    public static void print(Object o, int n) {
+        if (isArray(o)) {
+            Collection<Object> coll = new ArrayList<>();
+            int length = Array.getLength(o);
+            for (int i = 0; i < length; i++) {
+                Object value = Array.get(o, i);
+                coll.add(value);
             }
+            Helper.print(toString(coll.toArray(), n));
+            print(coll.toArray(), n);
+        } else {
+            System.out.println(o);
         }
-        b.append(o[iMax]).append("\n");
-        return b.toString();
     }
 
     public static void print(Object[] o, int l) {
@@ -88,25 +80,24 @@ public class Helper {
     }
 
     public static void print(Object[] o) {
-        System.out.println(Arrays.toString(o));
+        print(Arrays.toString(o));
     }
 
     public static void print(Object[]... o) {
-        System.out.println(Arrays.deepToString(o));
+        print(Arrays.deepToString(o));
     }
 
     public static void print(int[]... s) {
-        System.out.println(Arrays.deepToString(s));
+        print(Arrays.deepToString(s));
     }
 
     public static void print(String[]... s) {
-        System.out.println(Arrays.deepToString(s));
+        print(Arrays.deepToString(s));
     }
 
     public static void print(char[]... chars) {
-        System.out.println(Arrays.deepToString(chars));
+        print(Arrays.deepToString(chars));
     }
-
 
     public static void print(List<List<Integer>> o) {
         for (List<Integer> l : o) {
@@ -114,11 +105,11 @@ public class Helper {
         }
     }
 
-    public static void printList(List l) {
+    public static void printList(List<List<Integer>> l) {
 
         for (Object o : l) {
             if (o.getClass().getSimpleName().endsWith("List")) {
-                printList((List) o);
+                printList((List<List<Integer>>) o);
             } else {
                 System.out.print(o + " ");
             }
@@ -190,4 +181,44 @@ public class Helper {
 
         }
     }
+
+    /**
+     * 对象是否为数组对象
+     *
+     * @param obj 对象
+     * @return 是否为数组对象，如果为{@code null} 返回空指针
+     */
+    public static boolean isArray(Object obj) {
+        if (null == obj) {
+            throw new NullPointerException("Object check for isArray is null");
+        }
+//        反射 获得类型
+        return obj.getClass().isArray();
+    }
+
+    /**
+     * 数组分页
+     *
+     * @param o 数组
+     * @param l 每页数据量
+     * @return
+     */
+    private static String toString(Object[] o, int l) {
+        if (o == null)
+            return "null";
+        int iMax = o.length - 1;
+        if (iMax == -1)
+            return "[]";
+        StringBuilder b = new StringBuilder();
+        b.append("[");
+        for (int i = 1; i < o.length; ++i) {
+            b.append(o[i - 1]).append(", ");
+            if (i % l == 0) {
+                b.append('\n');
+            }
+        }
+        b.append(o[iMax]).append("]").append("\n");
+        return b.toString();
+    }
+
 }
