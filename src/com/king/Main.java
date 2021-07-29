@@ -87,5 +87,13 @@ public class Main {
             System.out.println(i5 == i6);
         }
     }
+
+    static class a {
+        public static void main(String[] args) {
+
+
+
+        }
+    }
 }
 

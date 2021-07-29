@@ -180,6 +180,7 @@ select 年度, count(*) as sum
 from sheet2
 where 类型 = '离职'
 group by 年度;
+
 4)查询2009年度，每个月的离职人数以及环比增长率，结果根据年度、月度升序排序
 
 select 年度, 月度, count(1) as 本月离职数

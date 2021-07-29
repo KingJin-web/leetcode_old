@@ -60,10 +60,10 @@ public class Helper {
                 Object value = Array.get(o, i);
                 coll.add(value);
             }
-            Helper.print(toString(coll.toArray(), n));
-            print(coll.toArray(), n);
+            print(toString(coll.toArray(), n));
         } else {
-            System.out.println(o);
+            print("这不是数组 !");
+            print(o);
         }
     }
 
@@ -219,6 +219,20 @@ public class Helper {
         }
         b.append(o[iMax]).append("]").append("\n");
         return b.toString();
+    }
+
+    /**
+     * 获取变量数据类型
+     *
+     * @param o
+     * @return
+     */
+    public static String getType(Object o) {
+        return o.getClass().getSimpleName();
+    }
+
+    public static void main(String[] args) {
+        print(getType("aa"));
     }
 
 }
