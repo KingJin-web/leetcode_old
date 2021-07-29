@@ -28,5 +28,6 @@ BEGIN
     );
 END;
 
+
 drop function getNthHighestSalary;
 select getNthHighestSalary(5);
