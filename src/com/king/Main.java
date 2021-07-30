@@ -25,6 +25,7 @@ public class Main {
         System.out.println(chineseNumber(s));
         System.out.println(s.length());
         System.out.println(Arrays.toString(s.getBytes(StandardCharsets.UTF_8)));
+
     }
 
 
@@ -88,10 +89,15 @@ public class Main {
         }
     }
 
-    static class a {
+    static class a extends Helper {
         public static void main(String[] args) {
 
-
+            int i = 5;
+            int j = 5;
+            int a = (i++) + (i++) + (i++);
+            int b = (++j) + (++j) + (++j);
+            print(a);
+            print(b);
 
         }
     }
