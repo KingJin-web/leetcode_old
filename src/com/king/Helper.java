@@ -32,25 +32,43 @@ public class Helper {
         return Arrays.asList(s);
     }
 
+    public static void printf(Object o) {
+        System.out.print(o);
+    }
+
+    public static void print() {
+        printf('\n');
+    }
     /**
      * https://www.cnblogs.com/fjdingsd/p/5272242.html
      *
      * @param o
      */
     public static void print(Object o) {
+
         if (isArray(o)) {
-            Collection<Object> coll = new ArrayList<>();
+            List<Object> coll = new ArrayList<>();
             int length = Array.getLength(o);
             for (int i = 0; i < length; i++) {
                 Object value = Array.get(o, i);
-                coll.add(value);
+                if (isArray(value)) {
+                    print(value);
+                } else {
+                    coll.add(value);
+                }
             }
-            Helper.print(coll);
+            if (!coll.isEmpty()) {
+                Helper.print(coll);
+            }
         } else {
             System.out.println(o);
         }
 
     }
+
+//    public static void print(int[]... s) {
+//        print(Arrays.deepToString(s));
+//    }
 
     public static void print(Object o, int n) {
         if (isArray(o)) {
@@ -79,17 +97,11 @@ public class Helper {
 
     }
 
-    public static void print(Object[] o) {
-        print(Arrays.toString(o));
-    }
 
     public static void print(Object[]... o) {
         print(Arrays.deepToString(o));
     }
 
-    public static void print(int[]... s) {
-        print(Arrays.deepToString(s));
-    }
 
     public static void print(String[]... s) {
         print(Arrays.deepToString(s));

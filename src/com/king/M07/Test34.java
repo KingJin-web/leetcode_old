@@ -3,6 +3,7 @@ package com.king.M07;
 import com.king.Helper;
 
 import java.util.Arrays;
+import java.util.Scanner;
 
 /**
  * @program: leetcode
@@ -11,7 +12,7 @@ import java.util.Arrays;
  * @author: King
  * @create: 2021-07-30 14:50
  */
-public class Test34 {
+public class Test34 extends Helper {
     public static Test34 t34 = new Test34();
     public T1 t1 = new T1();
     public T2 t2 = new T2();
@@ -89,9 +90,21 @@ public class Test34 {
         }
     }
 
-    public static class T3{
-        public static void main(String[] args) {
+    public static class T3 {
 
+        public static void main(String[] args) {
+            Scanner in = new Scanner(System.in);
+            double a = in.nextDouble();
+            int b = (int) a;
+            int 十元 = b / 10;
+            int 五元 = (b - 十元 * 10 - 5) >= 0 ? 1 : 0;
+            int 一元 = b - (十元 * 10 + 五元 * 5);
+            System.out.println(十元 + ":" + 五元 + ":" + 一元);
+
+            int al = (int) (Math.round(a * 100) / 100.0);
+            print(al);
+
+            in.close();
         }
     }
 
