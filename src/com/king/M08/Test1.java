@@ -83,6 +83,10 @@ public class Test1 {
      * 5830. Èı³ıÊı
      */
     public static class T2{
-
+        public static void main(String args[]) {
+            int i = 0;
+            i = i++ + i;
+            System.out.println("I =" +i);
+        }
     }
 }
