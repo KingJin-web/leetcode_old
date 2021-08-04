@@ -39,6 +39,7 @@ public class Helper {
     public static void print() {
         printf('\n');
     }
+
     /**
      * https://www.cnblogs.com/fjdingsd/p/5272242.html
      *
@@ -97,6 +98,9 @@ public class Helper {
 
     }
 
+    public static void println(int... objects) {
+        print(objects);
+    }
 
     public static void print(Object[]... o) {
         print(Arrays.deepToString(o));
@@ -246,5 +250,6 @@ public class Helper {
     public static void main(String[] args) {
         print(getType("aa"));
     }
+
 
 }
