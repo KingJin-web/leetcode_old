@@ -40,6 +40,3 @@ public class Test4 {
     }
 
 }
-abstract class a{
-
-}
