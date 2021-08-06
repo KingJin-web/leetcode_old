@@ -123,7 +123,7 @@ public class Test6 {
                 ++count;
                 listNode = listNode.next;
             }
-            int arr[] = new int[count];
+            int[] arr = new int[count];
             listNode = head;
             for (int i = arr.length - 1; i >= 0; --i) {
                 arr[i] = listNode.val;
