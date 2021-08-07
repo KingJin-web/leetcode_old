@@ -5,6 +5,7 @@ import com.king.ListNode;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Stack;
 
 /**
  * @program: leetcode
@@ -132,11 +133,46 @@ public class Test6 {
             return arr;
         }
 
+        public int[] reversePrint1(ListNode head) {
+            Stack<ListNode> stack = new Stack<ListNode>();
+            ListNode temp = head;
+            while (temp != null) {
+                stack.push(temp);
+                temp = temp.next;
+            }
+            int size = stack.size();
+            int[] print = new int[size];
+            for (int i = 0; i < size; i++) {
+                print[i] = stack.pop().val;
+            }
+            return print;
+        }
+
+        /**
+         * 执行用时： 1 ms , 在所有 Java 提交中击败了 73.71% 的用户 内存消耗： 39 MB , 在所有 Java 提交中击败了 52.39% 的用户 炫耀一下:
+         * @param head
+         * @return
+         */
+        public int[] reversePrint2(ListNode head) {
+            Stack<Integer> stack = new Stack<Integer>();
+            ListNode temp = head;
+            while (temp != null) {
+                stack.push(temp.val);
+                temp = temp.next;
+            }
+            int size = stack.size();
+            int[] print = new int[size];
+            for (int i = 0; i < size; i++) {
+                print[i] = stack.pop();
+            }
+            return print;
+        }
         public static void main(String[] args) {
             T3 t3 = new T3();
             ListNode l = new ListNode(Helper.getArrays(1, 3, 2));
             Helper.print(t3.reversePrint(l));
-            Helper.print(l);
+            Helper.print(t3.reversePrint1(l));
+            Helper.print(t3.reversePrint2(l));
         }
     }
 
