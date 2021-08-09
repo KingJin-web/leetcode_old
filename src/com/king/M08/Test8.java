@@ -37,7 +37,10 @@ public class Test8 {
     }
 
     public static void main(String[] args) {
-
+        String x="7";
+        int y = 2;
+        int z=2;
+        System.out.println(x+y+z);
         Helper.print(test8.tribonacci(25));
     }
 }
