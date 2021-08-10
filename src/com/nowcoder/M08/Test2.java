@@ -32,6 +32,7 @@ public class Test2 {
             System.out.println(a.length() - max);
         }
     }
+
 }
 /**
  * 时间限制：C/C++ 1秒，其他语言2秒
