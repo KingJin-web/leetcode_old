@@ -1,6 +1,8 @@
 package com.king.M08;
 
-import java.util.Arrays;
+import com.king.Helper;
+
+import java.util.*;
 
 /**
  * @program: leetcode
@@ -32,5 +34,41 @@ public class Test9 {
             }
         }
         return dp[n];
+    }
+
+    public int nthSuperUglyNumber1(int n, int[] primes) {
+        int[] dp = new int[n];
+        dp[0] = 1;
+        Map<Integer, Integer> primesMap = new HashMap<>();
+        for (int prime : primes) {
+            primesMap.put(prime, 0);
+        }
+
+        for (int i = 1; i < n; i++) {
+            int min = Integer.MAX_VALUE;
+            for (Map.Entry<Integer, Integer> entry : primesMap.entrySet()) {
+                min = Math.min(min, dp[entry.getValue()]*entry.getKey());
+            }
+            dp[i] = min;
+            List<Integer> list = new ArrayList<>();
+            for (Map.Entry<Integer, Integer> entry : primesMap.entrySet()) {
+                if (dp[entry.getValue()]*entry.getKey() == min) {
+                    list.add(entry.getKey());
+                }
+            }
+            for (Integer key : list) {
+                primesMap.put(key, primesMap.getOrDefault(key, 0)+1);
+            }
+        }
+
+        Helper.print(dp,5);
+        return dp[n-1];
+    }
+
+    static Test9 test8 = new Test9();
+    public static void main(String[] args) {
+        test8.nthSuperUglyNumber(12,Helper.getArrays(2,7,13,19));
+        test8.nthSuperUglyNumber1(12,Helper.getArrays(2,7,13,19));
+
     }
 }

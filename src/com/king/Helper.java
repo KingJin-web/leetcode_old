@@ -4,10 +4,7 @@ import sun.misc.Unsafe;
 
 import java.lang.reflect.Array;
 import java.lang.reflect.Field;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.List;
+import java.util.*;
 
 /**
  * @program: leetcode
@@ -226,14 +223,17 @@ public class Helper {
         if (iMax == -1)
             return "[]";
         StringBuilder b = new StringBuilder();
-        b.append("[");
+        b.append("[ ");
         for (int i = 1; i < o.length; ++i) {
-            b.append(o[i - 1]).append(", ");
+
+            b.append(String.format("%-5s ", o[i - 1]));
             if (i % l == 0) {
-                b.append('\n');
+                b.append("]\n[ ");
             }
+
         }
-        b.append(o[iMax]).append("]").append("\n");
+        b.append(o[iMax]).append(" ]\n");
+
         return b.toString();
     }
 
@@ -248,7 +248,9 @@ public class Helper {
     }
 
     public static void main(String[] args) {
-        print(getType("aa"));
+        try (Scanner in = new Scanner(System.in)) {
+            System.out.println(in.nextLine());
+        }
     }
 
 
