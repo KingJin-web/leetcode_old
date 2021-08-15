@@ -19,15 +19,15 @@ public class Test34 extends Helper {
 
     /**
      * @program: leetcode
-     * @description: 1929. ???鴮??
+     * @description: 1929. 数组串联
      * https://leetcode-cn.com/problems/concatenation-of-array/
      * @author: King
      * @create: 2021-07-30 14:50
      */
     public static class T1 {
         /**
-         * ???????? 1 ms , ?????? Java ???л????? 92.43% ?????
-         * ???????? 39.2 MB ,?????? Java ???л????? 24.57% ?????
+         * 执行用时： 1 ms , 在所有 Java 提交中击败了 92.43% 的用户
+         * 内存消耗： 39.2 MB ,在所有 Java 提交中击败了 24.57% 的用户
          *
          * @param nums
          * @return
@@ -62,15 +62,15 @@ public class Test34 extends Helper {
 
     /**
      * @program: leetcode
-     * @description: 1920. ???????й???????
+     * @description: 1920. 基于排列构建数组
      * https://leetcode-cn.com/problems/build-array-from-permutation/
      * @author: King
      * @create: 2021-07-30 14:50
      */
     public static class T2 {
         /**
-         * ???????? 3 ms , ?????? Java ???л????? 100.00% ?????
-         * ???????? 37.6 MB , ?????? Java ???л????? 100.00% ?????
+         * 执行用时： 3 ms , 在所有 Java 提交中击败了 100.00% 的用户
+         * 内存消耗： 37.6 MB , 在所有 Java 提交中击败了 100.00% 的用户
          *
          * @param nums
          * @return
