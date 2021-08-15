@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 /**
  * @program: leetcode
- * @description: 1929. Êý×é´®Áª
+ * @description: 1929. ???é´®??
  * https://leetcode-cn.com/problems/concatenation-of-array/
  * @author: King
  * @create: 2021-07-30 14:50
@@ -19,15 +19,15 @@ public class Test34 extends Helper {
 
     /**
      * @program: leetcode
-     * @description: 1929. Êý×é´®Áª
+     * @description: 1929. ???é´®??
      * https://leetcode-cn.com/problems/concatenation-of-array/
      * @author: King
      * @create: 2021-07-30 14:50
      */
     public static class T1 {
         /**
-         * Ö´ÐÐÓÃÊ±£º 1 ms , ÔÚËùÓÐ Java Ìá½»ÖÐ»÷°ÜÁË 92.43% µÄÓÃ»§
-         * ÄÚ´æÏûºÄ£º 39.2 MB ,ÔÚËùÓÐ Java Ìá½»ÖÐ»÷°ÜÁË 24.57% µÄÓÃ»§
+         * ???????? 1 ms , ?????? Java ???Ð»????? 92.43% ?????
+         * ???????? 39.2 MB ,?????? Java ???Ð»????? 24.57% ?????
          *
          * @param nums
          * @return
@@ -62,15 +62,15 @@ public class Test34 extends Helper {
 
     /**
      * @program: leetcode
-     * @description: 1920. »ùÓÚÅÅÁÐ¹¹½¨Êý×é
+     * @description: 1920. ???????Ð¹???????
      * https://leetcode-cn.com/problems/build-array-from-permutation/
      * @author: King
      * @create: 2021-07-30 14:50
      */
     public static class T2 {
         /**
-         * Ö´ÐÐÓÃÊ±£º 3 ms , ÔÚËùÓÐ Java Ìá½»ÖÐ»÷°ÜÁË 100.00% µÄÓÃ»§
-         * ÄÚ´æÏûºÄ£º 37.6 MB , ÔÚËùÓÐ Java Ìá½»ÖÐ»÷°ÜÁË 100.00% µÄÓÃ»§
+         * ???????? 3 ms , ?????? Java ???Ð»????? 100.00% ?????
+         * ???????? 37.6 MB , ?????? Java ???Ð»????? 100.00% ?????
          *
          * @param nums
          * @return
@@ -90,23 +90,7 @@ public class Test34 extends Helper {
         }
     }
 
-    public static class T3 {
 
-        public static void main(String[] args) {
-            Scanner in = new Scanner(System.in);
-            double a = in.nextDouble();
-            int b = (int) a;
-            int Ê®Ôª = b / 10;
-            int ÎåÔª = (b - Ê®Ôª * 10 - 5) >= 0 ? 1 : 0;
-            int Ò»Ôª = b - (Ê®Ôª * 10 + ÎåÔª * 5);
-            System.out.println(Ê®Ôª + ":" + ÎåÔª + ":" + Ò»Ôª);
-
-            int al = (int) (Math.round(a * 100) / 100.0);
-            print(al);
-
-            in.close();
-        }
-    }
 
 
 }

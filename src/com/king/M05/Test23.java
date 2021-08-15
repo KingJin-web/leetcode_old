@@ -4,18 +4,18 @@ import java.util.Arrays;
 
 /**
  * @program: leetcode
- * @description: ½£Ö¸ Offer 40. ×îĞ¡µÄk¸öÊı
+ * @description: å‰‘æŒ‡ Offer 40. æœ€å°çš„kä¸ªæ•°
  * @author: King
  * @create: 2021-05-25 23:25
  */
 public class Test23 {
-    //ÊäÈëÕûÊıÊı×é arr £¬ÕÒ³öÆäÖĞ×îĞ¡µÄ k ¸öÊı¡£ÀıÈç£¬ÊäÈë4¡¢5¡¢1¡¢6¡¢2¡¢7¡¢3¡¢8Õâ8¸öÊı×Ö£¬Ôò×îĞ¡µÄ4¸öÊı×ÖÊÇ1¡¢2¡¢3¡¢4¡£
+    //è¾“å…¥æ•´æ•°æ•°ç»„ arr ï¼Œæ‰¾å‡ºå…¶ä¸­æœ€å°çš„ k ä¸ªæ•°ã€‚ä¾‹å¦‚ï¼Œè¾“å…¥4ã€5ã€1ã€6ã€2ã€7ã€3ã€8è¿™8ä¸ªæ•°å­—ï¼Œåˆ™æœ€å°çš„4ä¸ªæ•°å­—æ˜¯1ã€2ã€3ã€4ã€‚
     public int[] getLeastNumbers(int[] arr, int k) {
         Arrays.sort(arr);
         return Arrays.copyOf(arr, k);
     }
 
-    public void ´òÓ¡³¤·½ĞÎ(){
+    public void æ‰“å°é•¿æ–¹å½¢(){
         int length = 9;
         int height = 7;
         for (int i=0;i<height;i++) {
@@ -41,7 +41,7 @@ public class Test23 {
 
     public static void main(String[] args) {
         Test23 test23 = new Test23();
-        test23.´òÓ¡³¤·½ĞÎ();
+        test23.æ‰“å°é•¿æ–¹å½¢();
 
 
 
