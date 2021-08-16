@@ -33,6 +33,10 @@ public class Helper {
         System.out.print(o);
     }
 
+    public static void printf(String format, Object... args) {
+        System.out.printf(format, args);
+    }
+
     public static void print() {
         printf('\n');
     }
