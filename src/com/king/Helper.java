@@ -17,6 +17,10 @@ public class Helper {
         return nums;
     }
 
+    public static char[] getArrays(char... chars) {
+        return chars;
+    }
+
     public static String[] getArrays(String... s) {
         return s;
     }
