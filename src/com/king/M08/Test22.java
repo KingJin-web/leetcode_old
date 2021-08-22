@@ -43,6 +43,8 @@ public class Test22 {
         }
     }
 
+
+
     public static void main(String[] args) {
         Test22 test22 = new Test22();
 
@@ -52,6 +54,14 @@ public class Test22 {
         //解释：
         //由于字符 "a" 不重复，所以不会被压缩。"bbbbbbbbbbbb" 被 “b12” 替代。
         //注意每个数字在数组中都有它自己的位置。
+
+        Helper.print(test22.compress(Helper.getArrays('a','b','b','b','b','b','b','b','b','b','b','b','b')));
+    }
+
+    private int compress(char[] arrays) {
+
+
+        return 0;
     }
 
 }
