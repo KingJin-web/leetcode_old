@@ -77,7 +77,7 @@ public class part2_1 {
     }
 
     public static void main(String[] args) {
-        UnZipInTxt("D:\\a\\a.zip", "");
+        UnZipInTxt("D:\\a\\a.zi", "");
     }
 
 }

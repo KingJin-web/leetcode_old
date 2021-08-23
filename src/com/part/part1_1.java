@@ -17,6 +17,6 @@ public class part1_1 {
 
     public static void main(String[] args) {
         System.out.println(SwapOddEvenBits(585));
-
+        System.out.println(SwapOddEvenBits(58));
     }
 }
