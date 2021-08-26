@@ -5,6 +5,7 @@ import com.king.Helper;
 
 import java.io.*;
 import java.nio.charset.Charset;
+import java.util.Scanner;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 import java.util.zip.ZipInputStream;
@@ -12,10 +13,11 @@ import java.util.zip.ZipOutputStream;
 
 /**
  * @program: leetcode
- * @description: Ğ´?¸ö³ÌĞò£¬ÄÜ¹»½âÑ¹¸½¼ş 2.1.zip ÖĞµÄËùÓĞºó×ºÎªtxtµÄ?±¾?¼ş¡£ ×¢Òâ:
- * 1. ¸½¼ş?»¹°üÀ¨ÆäËû?¼ş£¬ÎÒÃÇÖ»Òª½âÑ¹txt?¼ş¡£
- * 2. Ñ¹Ëõ°ü??»¹¿ÉÄÜÓĞÑ¹Ëõ°ü
- * 3. ÊÇÄã??Ğ´?¸ö³ÌĞòÍê³É½âÑ¹£¬¿ÉÒÔµ÷?µÚÈı?¿â£¬µ«²»ÄÜÊ¹?Íâ²¿µÄÈí¼şÀ´½âÑ¹¡£
+ * @description: å†™â¼€ä¸ªç¨‹åºï¼Œèƒ½å¤Ÿè§£å‹é™„ä»¶ 2.1.zip ä¸­çš„æ‰€æœ‰åç¼€ä¸ºtxtçš„â½‚æœ¬â½‚ä»¶ã€‚ æ³¨æ„:
+ * 1. é™„ä»¶â¾¥è¿˜åŒ…æ‹¬å…¶ä»–â½‚ä»¶ï¼Œæˆ‘ä»¬åªè¦è§£å‹txtâ½‚ä»¶ã€‚
+ * 2. å‹ç¼©åŒ…â¾¥â¾¯è¿˜å¯èƒ½æœ‰å‹ç¼©åŒ…
+ * 3. æ˜¯ä½ â¾ƒâ¼°å†™â¼€ä¸ªç¨‹åºå®Œæˆè§£å‹ï¼Œå¯ä»¥è°ƒâ½¤ç¬¬ä¸‰â½…åº“ï¼Œä½†ä¸èƒ½ä½¿â½¤å¤–éƒ¨çš„è½¯ä»¶æ¥
+ * è§£å‹ã€‚
  * @author: King
  * @create: 2021-08-21 22:26
  */
@@ -23,22 +25,22 @@ public class part2_1 {
 
 
     /**
-     * ½âÑ¹ Ö¸¶¨Ñ¹ËõÎÄ¼şÖĞËùÓĞ .txtÎÄ¼ş
+     * è§£å‹ æŒ‡å®šå‹ç¼©æ–‡ä»¶ä¸­æ‰€æœ‰ .txtæ–‡ä»¶
      *
-     * @param zipPath Ñ¹ËõÎÄ¼şÂ·¾¶
-     * @param outPath ½âÑ¹ÎÄ¼şÂ·¾¶ Èç¹ûÎª¿Õ¾Í»áÄ¬ÈÏ½âÑ¹µ½Ñ¹ËõÎÄ¼şÄ¿Â¼ÏÂ
+     * @param zipPath å‹ç¼©æ–‡ä»¶è·¯å¾„
+     * @param outPath è§£å‹æ–‡ä»¶è·¯å¾„ å¦‚æœä¸ºç©ºå°±ä¼šé»˜è®¤è§£å‹åˆ°å‹ç¼©æ–‡ä»¶ç›®å½•ä¸‹
      * @return
      */
     public static boolean UnZipInTxt(String zipPath, String outPath) {
-        File infile = new File(zipPath); //½âÑ¹ÎÄ¼ş
-        File outfile = null; //½âÑ¹µ½µÄÄ¿Â¼
+        File infile = new File(zipPath); //è§£å‹æ–‡ä»¶
+        File outfile = null; //è§£å‹åˆ°çš„ç›®å½•
         if (outPath.equals("")) {
             outPath = infile.getParentFile().getPath();
         }
         byte[] buf = new byte[1024];
         int readedBytes;
         if (!infile.exists() || !zipPath.endsWith(".zip")) {
-            System.out.println("ÎÄ¼ş²»´æÔÚ£¬»òÎÄÎÄ¼ş²»ÊÇzipÎÄ¼ş");
+            System.out.println("æ–‡ä»¶ä¸å­˜åœ¨ï¼Œæˆ–æ–‡ä»¶ä¸æ˜¯zipæ–‡ä»¶");
             return false;
         }
         try (ZipInputStream zis = new ZipInputStream(new BufferedInputStream(new FileInputStream(infile)), Charset.forName("gbk"))) {
@@ -46,10 +48,10 @@ public class part2_1 {
             String fileName;
             while ((zipEntry = zis.getNextEntry()) != null) {
 
-                fileName = zipEntry.getName(); //»ñÈ¡ÎÄ¼şÃû
+                fileName = zipEntry.getName(); //è·å–æ–‡ä»¶å
                 if (fileName.endsWith(".txt")) {
-                    outfile = new File(outPath + "\\" + zipEntry.getName()); //»ñµÃ½âÑ¹Ä¿±êÂ·¾¶
-                    //Èç¹ûÖ¸¶¨ÎÄ¼şµÄÄ¿Â¼²»´æÔÚ,Ôò´´½¨Ö®.
+                    outfile = new File(outPath + "\\" + zipEntry.getName()); //è·å¾—è§£å‹ç›®æ ‡è·¯å¾„
+                    //å¦‚æœæŒ‡å®šæ–‡ä»¶çš„ç›®å½•ä¸å­˜åœ¨,åˆ™åˆ›å»ºä¹‹.
                     File parent = outfile.getParentFile();
                     if (!parent.exists()) {
                         parent.mkdirs();
@@ -61,7 +63,7 @@ public class part2_1 {
                     }
                 } else {
                     if (zipEntry.isDirectory()) {
-                        outfile = new File(outPath + "\\" + zipEntry.getName()); //»ñµÃ½âÑ¹Ä¿±êÂ·¾¶
+                        outfile = new File(outPath + "\\" + zipEntry.getName()); //è·å¾—è§£å‹ç›®æ ‡è·¯å¾„
                         System.out.println(outfile.getPath());
                         outfile.mkdirs();
                     }
@@ -71,6 +73,7 @@ public class part2_1 {
 
         } catch (IOException e) {
             e.printStackTrace();
+            return false;
         }
 
         return true;
@@ -81,6 +84,8 @@ public class part2_1 {
     }
 
 }
+
+
 
 
 
