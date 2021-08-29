@@ -1,5 +1,7 @@
 package com.king.M08;
 
+import com.king.Helper;
+
 /**
  * @program: leetcode
  * @description: 1480. 一维数组的动态和
@@ -19,5 +21,12 @@ public class Test28 {
             result[i] = count+=nums[i];
         }
         return result;
+    }
+
+    public static void main(String[] args) {
+//        输入：nums = [3,1,2,10,1]
+//        输出：[3,4,6,16,17]
+        Test28 test28 = new Test28();
+        Helper.print(test28.runningSum(Helper.getArrays(3,1,2,10,1)));
     }
 }
