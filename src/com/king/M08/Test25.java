@@ -1,5 +1,7 @@
 package com.king.M08;
 
+import com.king.Helper;
+
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -11,7 +13,7 @@ import java.util.Queue;
  * @create: 2021-08-25 23:04
  */
 public class Test25 {
-    private final RecentCounter p = new RecentCounter();
+
 
     public static class RecentCounter {
 
@@ -34,8 +36,20 @@ public class Test25 {
     }
 
     public static void main(String[] args) {
-        Test25 test25 = new Test25();
-        test25.p.ping(155);
+        //inputs = ["RecentCounter", "ping", "ping", "ping", "ping"]
+        //inputs = [[], [1], [100], [3001], [3002]] ‰»Î£∫
+        //inputs = ["RecentCounter", "ping", "ping", "ping", "ping"]
+        //inputs = [[], [1], [100], [3001], [3002]]
+        // ‰≥ˆ£∫
+        //[null, 1, 2, 3, 3]
+
+        RecentCounter p = new RecentCounter();
+        p.ping(1);
+        p.ping(100);
+        p.ping(3001);
+        int a = p.ping(3002);
+        Helper.print(p.queue);
+        System.out.println(a);
     }
 }
 
