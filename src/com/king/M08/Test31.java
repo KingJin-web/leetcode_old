@@ -2,6 +2,8 @@ package com.king.M08;
 
 import com.king.Helper;
 
+import java.util.Arrays;
+
 /**
  * @program: leetcode
  * @description: 1109. 航班预订统计
@@ -12,7 +14,7 @@ import com.king.Helper;
 public class Test31 {
 
     //执行用时： 1530 ms , 在所有 Java 提交中击败了 13.58% 的用户 内存消耗： 53.4 MB , 在所有 Java 提交中击败了 54.06% 的用户
-    public int[] corpFlightBookings(int[][] bookings, int n) {
+    public int[] corpFlightBookings1(int[][] bookings, int n) {
         int[] arr = new int[n];
         for (int[] nums : bookings) {
             for (int i = nums[0] - 1; i < nums[1]; ++i) {
@@ -20,6 +22,20 @@ public class Test31 {
             }
         }
         return arr;
+    }
+
+    //执行用时： 2 ms , 在所有 Java 提交中击败了 100.00% 的用户 内存消耗： 53 MB , 在所有 Java 提交中击败了 83.26% 的用户
+    public int[] corpFlightBookings(int[][] bookings, int n) {
+        int[] arr = new int[n + 2];
+
+        for (int[] booking : bookings) {
+            arr[booking[0]] += booking[2];
+            arr[booking[1] + 1] -= booking[2];
+        }
+        for (int i = 1; i <= n; i++) {
+            arr[i] += arr[i - 1];
+        }
+        return Arrays.copyOfRange(arr, 1, n + 1);
     }
 
     public static void main(String[] args) {
