@@ -8,9 +8,7 @@ package com.king;
  */
 
 import java.nio.charset.StandardCharsets;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Scanner;
+import java.util.*;
 import java.util.regex.Pattern;
 
 public class Main {
@@ -98,6 +96,12 @@ public class Main {
             int b = (++j) + (++j) + (++j);
             print(a);
             print(b);
+
+
+           List<String> list =getList("a","b");
+            Iterable<String> stringIterable = list;
+
+            System.out.println(stringIterable);
 
         }
     }
