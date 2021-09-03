@@ -108,28 +108,6 @@ public class Test2 {
             return list;
         }
 
-        public static List<String> dateToWeek(String date) {
-            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-            Date mdate = null;
-            try {
-                mdate = sdf.parse(date);
-            } catch (ParseException e) {
-                e.printStackTrace();
-            }
-            int b = mdate.getDay();
-            Date fdate;
-            List<String> list = new ArrayList<String>();
-            long fTime = mdate.getTime() - (long) b * 24 * 3600000;
-
-            for (int a = 1; a <= 7; a++) {
-                fdate = new Date();
-                fdate.setTime(fTime + (a * 24 * 3600000)); //一周从周一开始算，则使用此方式
-                //fdate.setTime(fTime + ((a-1) * 24*3600000)); //一周从周日开始算，则使用此方式
-                list.add(sdf.format(fdate));
-            }
-
-            return list;
-        }
 
         public static List<String> a(String recipeTime) throws ParseException {
             List<String> list = new ArrayList<String>();
@@ -165,7 +143,6 @@ public class Test2 {
         public static void main(String[] args) throws ParseException {
 //            String str = "\"update_at\":\"";
 //            Helper.print(str.length());
-            Helper.print(dateToWeek("2021-09-05"));
             Helper.print(cal2("2021-09-11"));
             Helper.print(a("2021-09-05"));
         }
