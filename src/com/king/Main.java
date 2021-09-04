@@ -7,7 +7,8 @@ package com.king;
  * @create: 2021-04-27 10:49
  */
 
-import java.nio.charset.StandardCharsets;
+import com.king.util.MyPrint;
+
 import java.util.*;
 import java.util.regex.Pattern;
 
@@ -20,9 +21,26 @@ public class Main {
     public static void main(String[] args) {
         String s = "你好123asdf";
 
-        System.out.println(chineseNumber(s));
-        System.out.println(s.length());
-        System.out.println(Arrays.toString(s.getBytes(StandardCharsets.UTF_8)));
+//        System.out.println(chineseNumber(s));
+//        System.out.println(s.length());
+//        System.out.println(Arrays.toString(s.getBytes(StandardCharsets.UTF_8)));
+
+        List<List<String>> list = new ArrayList<>();
+        List<String> list1 = new ArrayList<>();
+        list1.add("a");
+        list1.add("a");
+        list.add(list1);
+        list1.add("a");
+        list1.add("a");
+        list.add(list1);
+        list1.add("a");
+        list1.add("a");
+        MyPrint.printIsLn(list);
+
+        List<double[]> ld = new ArrayList<>();
+        ld.add(coins);
+        ld.add(coins);
+        MyPrint.printIsLn(ld);
 
     }
 
