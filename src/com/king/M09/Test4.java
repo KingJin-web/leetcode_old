@@ -13,7 +13,22 @@ public class Test4 {
 
     public static void main(String[] args) {
         Test4 test4 = new Test4();
-        MyPrint.print(test4.fib1(900));
+        MyPrint.print(test4.fib(100));
+        MyPrint.print(test4.fib1(100));
+
+    }
+    public int fib(int n) {
+        long[] f = new long[]{0, 1, 1};
+        if (n < f.length)
+            return (int) f[n];
+
+        for (int i = 2; i <= n; i++) {
+            f[2] = ((f[1] + f[0]) % 1000000007);
+            f[0] = f[1];
+            f[1] = f[2];
+        }
+
+        return (int) f[2];
     }
     //执行用时： 0 ms , 在所有 Java 提交中击败了 100.00% 的用户 内存消耗： 35 MB , 在所有 Java 提交中击败了 83.36% 的用户
     public int fib1(int n) {
