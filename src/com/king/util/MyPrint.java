@@ -48,7 +48,7 @@ public class MyPrint {
             if (!coll.isEmpty()) {
                 Helper.print(coll);
             }
-        } else if (getType(o).contains("List")){
+        } else if (o instanceof List){
             List list  = (List) o;
             System.out.print("[");
             for (Object object :list) {
