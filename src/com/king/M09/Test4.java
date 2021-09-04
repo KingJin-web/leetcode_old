@@ -1,6 +1,9 @@
 package com.king.M09;
 
+import com.king.Helper;
 import com.king.util.MyPrint;
+
+import java.util.Arrays;
 
 /**
  * @program: leetcode
@@ -17,6 +20,7 @@ public class Test4 {
         MyPrint.print(test4.fib1(100));
 
     }
+
     public int fib(int n) {
         long[] f = new long[]{0, 1, 1};
         if (n < f.length)
@@ -30,6 +34,7 @@ public class Test4 {
 
         return (int) f[2];
     }
+
     //执行用时： 0 ms , 在所有 Java 提交中击败了 100.00% 的用户 内存消耗： 35 MB , 在所有 Java 提交中击败了 83.36% 的用户
     public int fib1(int n) {
         if (n == 0) return 0;
@@ -133,5 +138,53 @@ public class Test4 {
         if (n == 99) return 94208912;
         if (n == 100) return 687995182;
         return (fib1(n - 1) + fib1(n - 2)) % 1000000007;
+    }
+
+    //剑指 Offer II 101. 分割等和子串
+    // https://leetcode-cn.com/problems/NUPfPr/
+    public static class T2 {
+        //给定一个非空的正整数数组 nums ，请判断能否将这些数字分成元素和相等的两部分。
+        //执行用时： 19 ms , 在所有 Java 提交中击败了 78.59% 的用户 内存消耗： 37.8 MB , 在所有 Java 提交中击败了 76.76% 的用户
+        public boolean canPartition(int[] nums) {
+            Arrays.sort(nums);
+            int sum = Arrays.stream(nums).sum();
+            if (sum % 2 != 0) {
+                return false;
+            }
+            sum /= 2;
+            boolean[] f = new boolean[sum + 1];
+            f[0] = true;
+            for (int x : nums) {
+                for (int j = sum; j >= x; j--) {
+                    f[j] |= f[j - x];
+                }
+            }
+            return f[sum];
+        }
+
+        //执行用时： 19 ms , 在所有 Java 提交中击败了 78.59% 的用户 内存消耗： 37.5 MB , 在所有 Java 提交中击败了 97.86% 的用户
+        public boolean canPartition1(int[] nums) {
+            int m = 0;
+            for (int num : nums) m += num;
+            if (m % 2 != 0) return false;
+            m /= 2;
+            boolean[] f = new boolean[m + 1];
+            f[0] = true;
+            for (int x : nums) {
+                for (int j = m; j >= x; j--) {
+                    f[j] |= f[j - x];
+                }
+            }
+            return f[m];
+        }
+
+        public static void main(String[] args) {
+            //输入：nums = [1,5,11,5]
+            //输出：true
+            //解释：nums 可以分割成 [1, 5, 5] 和 [11] 。
+            T2 t2 = new T2();
+            MyPrint.print(t2.canPartition(Helper.getArrays(1, 5, 11, 5)));
+            MyPrint.print(t2.canPartition(Helper.getArrays(1, 1, 2, 2)));
+        }
     }
 }
