@@ -187,4 +187,24 @@ public class Test4 {
             MyPrint.print(t2.canPartition(Helper.getArrays(1, 1, 2, 2)));
         }
     }
+
+    //面试题 01.09. 字符串轮转
+    //https://leetcode-cn.com/problems/string-rotation-lcci/
+    public static class T3 {
+
+        //执行用时： 0 ms , 在所有 Java 提交中击败了 100.00% 的用户
+        //内存消耗： 38.1 MB , 在所有 Java 提交中击败了 64.99% 的用户
+        public boolean isFlipedString(String s1, String s2) {
+            if (s1.length() != s2.length()) return false;
+            String ss = s2 + s2;
+            return ss.contains(s1);
+        }
+
+
+        public static void main(String[] args) {
+            T3 t3 = new T3();
+            String s1 = "waterbottle", s2 = "erbottlewat";
+            MyPrint.print(t3.isFlipedString(s1, s2));
+        }
+    }
 }
