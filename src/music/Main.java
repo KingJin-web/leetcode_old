@@ -1,7 +1,6 @@
 package music;
 
-import sun.audio.AudioPlayer;
-import sun.audio.AudioStream;
+
 
 import java.applet.Applet;
 import java.applet.AudioClip;
@@ -31,7 +30,6 @@ public class Main {
         URL url = sound1.toURI().toURL();
         System.out.println(url);
         AudioClip sound_choose1= Applet.newAudioClip(url);
-
         sound_choose1.play();   //播放音效
         scanner.nextInt();
 
