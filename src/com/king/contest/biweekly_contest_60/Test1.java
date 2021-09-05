@@ -31,6 +31,7 @@ public class Test1 {
     public static void main(String[] args) {
         Test1 test1 = new Test1();
         MyPrint.print(test1.pivotIndex(StringUtil.stringToIntegerArray("[2,3,-1,8,4]")));
+        MyPrint.print(test1.findMiddleIndex(StringUtil.stringToIntegerArray("[2,3,-1,8,4]")));
     }
 
     public int findMiddleIndex(int[] nums) {
