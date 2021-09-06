@@ -1,8 +1,14 @@
 package com.king.util;
 
+import com.google.gson.Gson;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonParser;
 import com.king.ListNode;
 import com.king.TreeNode;
 import com.mysql.cj.xdevapi.JsonArray;
+
+import com.mysql.cj.xdevapi.JsonValue;
+import net.sf.json.JSONArray;
 
 import java.text.DecimalFormat;
 import java.util.*;
@@ -64,6 +70,16 @@ public class StringUtil {
         return output;
     }
 
+    //properties = [[1,5],[10,4],[4,3]] --> int[][]
+    public static int[][] stringToIntegerArray2(String input) {
+        input = input.trim();
+        input = input.substring(1, input.length() - 1);
+        Gson gson = new Gson();
+        gson.toJson(stringToInt2dArray(input));
+        //MyPrint.print(a);
+        return new int[1][2];
+    }
+
     //String str = "[1,2,3,4,5,6,7,8,9]" --> ListNode
     public static ListNode stringToListNode(String input) {
         // Generate array from the input
@@ -78,6 +94,20 @@ public class StringUtil {
         }
         return dummyRoot.next;
     }
+
+    public static int[][] stringToInt2dArray(String input) {
+        JSONArray jsonArray = JSONArray.fromObject(input);
+        if (jsonArray.size() == 0) {
+            return new int[0][0];
+        }
+        int[][] arr = new int[jsonArray.size()][];
+        for (int i = 0; i < arr.length; i++) {
+            JSONArray cols = jsonArray.getJSONArray(i);
+            arr[i] = stringToIntegerArray(cols.toString());
+        }
+        return arr;
+    }
+
 
     public static String integerArrayToString(int[] nums, int length) {
         if (length == 0) {
@@ -288,6 +318,8 @@ public class StringUtil {
         stringToListNode("[1,2,3,4,5,6,7,8,9]").println();
         MyPrint.print(stringToListNode("[1,2,3,4,5,6,7,8,9]"));
         MyPrint.print(integerArrayToString((stringToIntegerArray("[1,2,3,4,5,6,7,8,9]")), 8));
+        MyPrint.print( stringToInt2dArray("[[5,5],[6,3],[3,6]]"));
+        stringToIntegerArray2("[[5,5],[6,3],[3,6]]");
     }
 
 
