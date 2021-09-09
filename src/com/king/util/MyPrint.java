@@ -50,11 +50,11 @@ public class MyPrint {
             }
         } else if (o instanceof List){
             List list  = (List) o;
-            System.out.print("[");
+            System.out.print("[ \n");
             for (Object object :list) {
                     print(object);
             }
-           // printf(']');
+            System.out.print(']');
         } else {
             System.out.println(o);
         }
