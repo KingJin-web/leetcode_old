@@ -79,7 +79,14 @@ public class StringUtil {
         //MyPrint.print(a);
         return new int[1][2];
     }
-
+    public static String[] stringToStringArray(String input) {
+        input = input.trim();
+        input = input.substring(1, input.length() - 1);
+        if (input.length() == 0) {
+            return new String[0];
+        }
+        return input.split(",");
+    }
     //String str = "[1,2,3,4,5,6,7,8,9]" --> ListNode
     public static ListNode stringToListNode(String input) {
         // Generate array from the input
