@@ -14,7 +14,7 @@ import java.util.Map;
  * @create: 2021-09-11 15:57
  */
 public class Test1 {
-    public int minimumSwitchingTimes1(int[][] source, int[][] target) {
+    public int minimumSwitchingTimeError(int[][] source, int[][] target) {
         Map<Integer, Integer> map1 = new HashMap<>();
         Map<Integer, Integer> map2 = new HashMap<>();
         int m = source.length;
@@ -40,7 +40,7 @@ public class Test1 {
 
     //执行用时： 4 ms , 在所有 Java 提交中击败了 100.00% 的用户
     // 内存消耗： 40 MB , 在所有 Java 提交中击败了 100.00% 的用户
-    public int minimumSwitchingTimes(int[][] A, int[][] B) {
+    public int minimumSwitchingTimes1(int[][] A, int[][] B) {
         int n = A.length, m = A[0].length, res = 0;
         int[] cnt = new int[10005];
         for (int i = 0; i < n; i++)
@@ -49,6 +49,35 @@ public class Test1 {
                 cnt[B[i][j]]--;
             }
         for (int i : cnt) if (i > 0) res += i;
+        return res;
+    }
+
+    //执行用时： 4 ms , 在所有 Java 提交中击败了 100.00% 的用户
+    // 内存消耗： 40 MB , 在所有 Java 提交中击败了 100.00% 的用户
+    public int minimumSwitchingTimes(int[][] source, int[][] target) {
+        int n = source.length;
+        int m = source[0].length;
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int[] nums : source) {
+            for (int j = 0; j < m; j++) {
+                map.put(nums[j], map.getOrDefault(nums[j], 0) + 1);
+            }
+        }
+        int res = 0;
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                if (map.getOrDefault(target[i][j], 0) == 0) {
+                    map.remove(target[i][j]);
+                }
+                if (map.containsKey(target[i][j])) {
+                    map.put(target[i][j], map.getOrDefault(target[i][j], 0) - 1);
+
+                }
+                if (!map.containsKey(target[i][j])) {
+                    res++;
+                }
+            }
+        }
         return res;
     }
 
