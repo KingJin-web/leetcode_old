@@ -1,4 +1,4 @@
-package com.king.contest.season_2021_fall.autumn;
+package com.king.contest.season_2021.fall;
 
 import com.king.util.MyPrint;
 import com.king.util.StringUtil;

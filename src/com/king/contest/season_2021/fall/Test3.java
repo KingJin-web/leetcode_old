@@ -1,4 +1,4 @@
-package com.king.contest.season_2021_fall.autumn;
+package com.king.contest.season_2021.fall;
 
 /**
  * @program: leetcode
