@@ -19,6 +19,7 @@ public class Test12 {
     // (n+1)*n - n*(n-1)= 2*n， 所以只需要把最后答案加上 2*n, 最后 n+1 再存储到哈希表中。
 
 
+    //执行用时： 71 ms , 在所有 Java 提交中击败了 93.92% 的用户 内存消耗： 38.3 MB , 在所有 Java 提交中击败了 65.82% 的用户
     public int numberOfBoomerangs(int[][] points) {
         int len = points.length;
         int ans = 0;
