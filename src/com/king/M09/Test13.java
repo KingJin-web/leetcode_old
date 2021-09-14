@@ -7,7 +7,8 @@ import java.util.*;
 
 /**
  * @program: leetcode
- * @description:
+ * @description: 524. 通过删除字母匹配到字典里最长单词
+ * https://leetcode-cn.com/problems/longest-word-in-dictionary-through-deleting/
  * @author: King
  * @create: 2021-09-14 10:01
  */
