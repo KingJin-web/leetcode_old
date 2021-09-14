@@ -15,6 +15,14 @@ import java.util.List;
  * @create: 2021-09-04 11:26
  */
 public class MyPrint {
+    public static void main(String[] args) {
+        String[] ss = StringUtil.stringToStringArray("[\"ale\",\"apple\",\"monkey\",\"plea\"]");
+        List<String[]> dictionary = new ArrayList<>();
+        dictionary.add(ss);
+        dictionary.add(new String[]{"a","s0"});
+        MyPrint.print(dictionary);
+    }
+
     public static void printf(Object o) {
         System.out.print(o);
     }
@@ -48,29 +56,45 @@ public class MyPrint {
             if (!coll.isEmpty()) {
                 Helper.print(coll);
             }
-        } else if (o instanceof List){
-            List list  = (List) o;
-            System.out.print("[ \n");
-            for (Object object :list) {
-                    print(object);
+        } else if (o instanceof List) {
+            List list = (List) o;
+            print("=========list-start=========");
+            if (list.size() <= 0) {
+                print("null");
+                return;
             }
-            System.out.print(']');
+            if (!isArray(list.get(0))) {
+                list.forEach(System.out::println);
+            } else {
+                for (Object o1 : list) {
+                    int length = Array.getLength(o1);
+                    List<Object> coll = new ArrayList<>();
+                    for (int i = 0; i < length; i++) {
+                        Object value = Array.get(o1, i);
+                        coll.add(value);
+                    }
+                    print(coll.toArray());
+                }
+
+            }
+            print("=========list-end=========");
         } else {
             System.out.println(o);
         }
 
     }
 
-    public static void printIsLn(Object o){
-        print(o,true);
+    public static void printIsLn(Object o) {
+        print(o, true);
         print();
     }
+
     /**
      * https://www.cnblogs.com/fjdingsd/p/5272242.html
      *
      * @param o
      */
-    public static void print(Object o,boolean b) {
+    public static void print(Object o, boolean b) {
 
         if (isArray(o)) {
             List<Object> coll = new ArrayList<>();
@@ -78,25 +102,25 @@ public class MyPrint {
             for (int i = 0; i < length; i++) {
                 Object value = Array.get(o, i);
                 if (isArray(value)) {
-                    print(value,true);
+                    print(value, true);
                 } else {
                     coll.add(value);
                 }
             }
             if (!coll.isEmpty()) {
-                print(coll,true);
+                print(coll, true);
             }
-        } else if (getType(o).contains("List")){
-            List list  = (List) o;
-            print("[",false);
-            for (Object object :list) {
-                print(object,false);
+        } else if (getType(o).contains("List")) {
+            List list = (List) o;
+            print("[", false);
+            for (Object object : list) {
+                print(object, false);
             }
-           print("]",false);
-        } else  {
-            if (b){
+            print("]", false);
+        } else {
+            if (b) {
                 System.out.println(o);
-            }else {
+            } else {
                 System.out.print(o);
             }
         }
@@ -181,6 +205,7 @@ public class MyPrint {
 //        }
 //        return obj instanceof List;
 //    }
+
     /**
      * 对象是否为数组对象
      *
