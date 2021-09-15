@@ -18,6 +18,7 @@ import java.util.List;
  */
 public class Test8 {
 
+    //执行用时： 1 ms , 在所有 Java 提交中击败了 71.13% 的用户 内存消耗： 36.6 MB , 在所有 Java 提交中击败了 78.21% 的用户
     public List<String> fullJustify(String[] words, int maxWidth) {
         List<String> ans = new ArrayList<String>();
         int right = 0, n = words.length;
@@ -61,11 +62,7 @@ public class Test8 {
 
     // blank 返回长度为 n 的由空格组成的字符串
     public String blank(int n) {
-        StringBuffer sb = new StringBuffer();
-        for (int i = 0; i < n; ++i) {
-            sb.append(' ');
-        }
-        return sb.toString();
+        return " ".repeat(Math.max(0, n));
     }
 
     // join 返回用 sep 拼接 [left, right) 范围内的 words 组成的字符串
@@ -92,7 +89,11 @@ public class Test8 {
         Test8 test8 = new Test8();
         List<String> list = test8.fullJustify(Helper.getArrays("This", "is", "an", "example", "of", "text", "justification."), 16);
         MyPrint.print(list);
+        System.out.println(list);
+
     }
+
+
 }
 
 
