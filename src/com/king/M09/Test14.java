@@ -44,12 +44,39 @@ public class Test14 {
         return l;
     }
 
+    //执行用时： 0 ms , 在所有 Java 提交中击败了 100.00% 的用户
+    //内存消耗： 38.1 MB , 在所有 Java 提交中击败了 52.09% 的用户
+    public int findPeakElement2(int[] nums) {
+        int l = 0;
+        int r = nums.length - 1;
+
+        // 二分法 [l, r] 永远表示查询之后仍然可能的范围
+        while (l < r) {
+            int mid = (l + r) / 2;
+
+            // nums[-1] = nums[n] = -∞
+            if (nums[mid] < nums[mid + 1]) {
+                // 如果 mid + 1 更大， 说明 mid 之后肯定还在爬升，mid+1 之后有峰
+                l = mid + 1;
+            } else {
+                // 如果 mid 更大， 说明 mid 之前有峰
+                r = mid;
+            }
+        }
+
+        // 条件退出的时候 l 和 r 相等， 而我们始终保持 [l, r] 内有峰。 所以，r就是峰所在的位置。
+
+        return r;
+    }
+
+
     public static void main(String[] args) {
         Test14 test14 = new Test14();
         MyPrint.print(test14.findPeakElement(StringUtil.stringToIntegerArray("[1,2,1,3,5,6,4]")));
         MyPrint.print(test14.findPeakElement(StringUtil.stringToIntegerArray("[1,2,3]")));
         MyPrint.print(test14.findPeakElement(StringUtil.stringToIntegerArray("[3,2,1]")));
         MyPrint.print(test14.findPeakElement1(StringUtil.stringToIntegerArray("[1,2,3]")));
+        MyPrint.print(test14.findPeakElement2(StringUtil.stringToIntegerArray("[1,2,1,3,5,6,4]")));
     }
     //峰值元素是指其值严格大于左右相邻值的元素。
     //
