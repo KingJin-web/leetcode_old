@@ -1,7 +1,7 @@
 package com.king.contest.biweekly_contest_60;
 
 import com.king.util.MyPrint;
-import com.king.util.StringUtil;
+import com.king.util.LeetcodeUtil;
 
 /**
  * @program: leetcode
@@ -30,8 +30,8 @@ public class Test1 {
 
     public static void main(String[] args) {
         Test1 test1 = new Test1();
-        MyPrint.print(test1.pivotIndex(StringUtil.stringToIntegerArray("[2,3,-1,8,4]")));
-        MyPrint.print(test1.findMiddleIndex(StringUtil.stringToIntegerArray("[2,3,-1,8,4]")));
+        MyPrint.print(test1.pivotIndex(LeetcodeUtil.stringToIntegerArray("[2,3,-1,8,4]")));
+        MyPrint.print(test1.findMiddleIndex(LeetcodeUtil.stringToIntegerArray("[2,3,-1,8,4]")));
     }
 
     public int findMiddleIndex(int[] nums) {

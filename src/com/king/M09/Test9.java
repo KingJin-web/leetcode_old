@@ -1,7 +1,7 @@
 package com.king.M09;
 
 import com.king.util.MyPrint;
-import com.king.util.StringUtil;
+import com.king.util.LeetcodeUtil;
 
 /**
  * @program: leetcode
@@ -56,7 +56,7 @@ public class Test9 {
         //- 编号为 2 的学生使用 5 支粉笔，然后 k = 0 。
         //编号为 0 的学生没有足够的粉笔，所以他需要补充粉笔。
         Test9 test9 = new Test9();
-        MyPrint.print(test9.chalkReplacer(StringUtil.stringToIntegerArray("[5,1,5]"), 22));
-        MyPrint.print(test9.chalkReplacer(StringUtil.stringToIntegerArray("[3,4,1,2]"), 25));
+        MyPrint.print(test9.chalkReplacer(LeetcodeUtil.stringToIntegerArray("[5,1,5]"), 22));
+        MyPrint.print(test9.chalkReplacer(LeetcodeUtil.stringToIntegerArray("[3,4,1,2]"), 25));
     }
 }

@@ -16,7 +16,7 @@ import java.util.List;
  */
 public class MyPrint {
     public static void main(String[] args) {
-        String[] ss = StringUtil.stringToStringArray("[\"ale\",\"apple\",\"monkey\",\"plea\"]");
+        String[] ss = LeetcodeUtil.stringToStringArray("[\"ale\",\"apple\",\"monkey\",\"plea\"]");
         List<String[]> dictionary = new ArrayList<>();
         dictionary.add(ss);
         dictionary.add(new String[]{"a","s0"});

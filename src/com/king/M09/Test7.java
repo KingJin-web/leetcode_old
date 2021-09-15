@@ -2,7 +2,6 @@ package com.king.M09;
 
 import com.king.Helper;
 import com.king.util.MyPrint;
-import com.king.util.StringUtil;
 
 /**
  * @program: leetcode

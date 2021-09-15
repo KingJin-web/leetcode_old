@@ -1,7 +1,7 @@
 package com.king.M09;
 
 import com.king.util.MyPrint;
-import com.king.util.StringUtil;
+import com.king.util.LeetcodeUtil;
 
 import java.util.*;
 
@@ -57,7 +57,7 @@ public class Test13 {
         Test13 test13 = new Test13();
         String s = "abpcplea";
 
-        String[] ss = StringUtil.stringToStringArray("[\"ale\",\"apple\",\"monkey\",\"plea\"]");
+        String[] ss = LeetcodeUtil.stringToStringArray("[\"ale\",\"apple\",\"monkey\",\"plea\"]");
         List<String> dictionary = Arrays.asList(ss);
         MyPrint.print(test13.findLongestWord(s,dictionary));
 

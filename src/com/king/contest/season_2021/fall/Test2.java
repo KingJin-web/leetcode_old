@@ -1,7 +1,7 @@
 package com.king.contest.season_2021.fall;
 
 import com.king.util.MyPrint;
-import com.king.util.StringUtil;
+import com.king.util.LeetcodeUtil;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -54,6 +54,6 @@ public class Test2 {
 
     public static void main(String[] args) {
         Test2 test2 = new Test2();
-        MyPrint.print(test2.maxmiumScore(StringUtil.stringToIntegerArray("[1,2,8,9]"),3));
+        MyPrint.print(test2.maxmiumScore(LeetcodeUtil.stringToIntegerArray("[1,2,8,9]"),3));
     }
 }

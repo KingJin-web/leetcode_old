@@ -1,7 +1,7 @@
 package com.king.contest.season_2021.spring;
 
 import com.king.util.MyPrint;
-import com.king.util.StringUtil;
+import com.king.util.LeetcodeUtil;
 
 /**
  * @program: leetcode
@@ -25,6 +25,6 @@ public class Test1 {
         Test1 test1 = new Test1();
 //         ‰»Î£∫[4,2,1]
 //         ‰≥ˆ£∫4
-        MyPrint.print(test1.minCount(StringUtil.stringToIntegerArray("[4,2,1]")));
+        MyPrint.print(test1.minCount(LeetcodeUtil.stringToIntegerArray("[4,2,1]")));
     }
 }

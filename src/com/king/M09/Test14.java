@@ -1,7 +1,7 @@
 package com.king.M09;
 
 import com.king.util.MyPrint;
-import com.king.util.StringUtil;
+import com.king.util.LeetcodeUtil;
 
 import java.util.Arrays;
 
@@ -72,11 +72,11 @@ public class Test14 {
 
     public static void main(String[] args) {
         Test14 test14 = new Test14();
-        MyPrint.print(test14.findPeakElement(StringUtil.stringToIntegerArray("[1,2,1,3,5,6,4]")));
-        MyPrint.print(test14.findPeakElement(StringUtil.stringToIntegerArray("[1,2,3]")));
-        MyPrint.print(test14.findPeakElement(StringUtil.stringToIntegerArray("[3,2,1]")));
-        MyPrint.print(test14.findPeakElement1(StringUtil.stringToIntegerArray("[1,2,3]")));
-        MyPrint.print(test14.findPeakElement2(StringUtil.stringToIntegerArray("[1,2,1,3,5,6,4]")));
+        MyPrint.print(test14.findPeakElement(LeetcodeUtil.stringToIntegerArray("[1,2,1,3,5,6,4]")));
+        MyPrint.print(test14.findPeakElement(LeetcodeUtil.stringToIntegerArray("[1,2,3]")));
+        MyPrint.print(test14.findPeakElement(LeetcodeUtil.stringToIntegerArray("[3,2,1]")));
+        MyPrint.print(test14.findPeakElement1(LeetcodeUtil.stringToIntegerArray("[1,2,3]")));
+        MyPrint.print(test14.findPeakElement2(LeetcodeUtil.stringToIntegerArray("[1,2,1,3,5,6,4]")));
     }
     //峰值元素是指其值严格大于左右相邻值的元素。
     //

@@ -1,9 +1,8 @@
 package com.king.contest.weekly_contest_257;
-import java.applet.AudioClip;
 import java.util.Arrays;
 
 import com.king.Helper;
-import com.king.util.StringUtil;
+import com.king.util.LeetcodeUtil;
 
 /**
  * @program: leetcode
@@ -53,8 +52,8 @@ public class Test2 {
         int[][] ints = new int[][]{{1, 5}, {10, 4}, {4, 3}};
         Test2 test2 = new Test2();
         Helper.print(new Test2().numberOfWeakCharacters(ints));
-        Helper.print(test2.numberOfWeakCharacters2(StringUtil.stringToInt2dArray("[[1,5],[10,4],[4,3]]")));
-        Helper.print(test2.numberOfWeakCharacters2(StringUtil.stringToInt2dArray("[[5,5],[6,3],[3,6]]")));
+        Helper.print(test2.numberOfWeakCharacters2(LeetcodeUtil.stringToInt2dArray("[[1,5],[10,4],[4,3]]")));
+        Helper.print(test2.numberOfWeakCharacters2(LeetcodeUtil.stringToInt2dArray("[[5,5],[6,3],[3,6]]")));
         // [[5,5],[6,3],[3,6]]
 
     }

@@ -1,9 +1,7 @@
 package com.king.M09;
 
 import com.king.util.MyPrint;
-import com.king.util.StringUtil;
-
-import java.util.Arrays;
+import com.king.util.LeetcodeUtil;
 
 /**
  * @program: leetcode
@@ -46,8 +44,8 @@ public class Test6 {
         //输出: -1
         //解释: 2 不存在 nums 中因此返回 -1
 
-        MyPrint.print(test6.search(StringUtil.stringToIntegerArray("[-1,0,3,5,9,12]"),9));
-        MyPrint.print(test6.search(StringUtil.stringToIntegerArray("[-1,0,3,5,9,12]"),2));
+        MyPrint.print(test6.search(LeetcodeUtil.stringToIntegerArray("[-1,0,3,5,9,12]"),9));
+        MyPrint.print(test6.search(LeetcodeUtil.stringToIntegerArray("[-1,0,3,5,9,12]"),2));
     }
 
 }

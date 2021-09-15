@@ -1,18 +1,13 @@
 package com.king.util;
 
 import com.google.gson.Gson;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonParser;
 import com.king.ListNode;
 import com.king.TreeNode;
-import com.mysql.cj.xdevapi.JsonArray;
 
-import com.mysql.cj.xdevapi.JsonValue;
 import net.sf.json.JSONArray;
 
 import java.text.DecimalFormat;
 import java.util.*;
-import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
@@ -21,8 +16,8 @@ import java.util.logging.Logger;
  * @author: King
  * @create: 2021-09-04 13:35
  */
-public class StringUtil {
-    private static Logger logger = Logger.getLogger(StringUtil.class.getName());
+public class LeetcodeUtil {
+    private static Logger logger = Logger.getLogger(LeetcodeUtil.class.getName());
 
     /**
      * Convert String to int, return the specified value if it fails
@@ -155,18 +150,18 @@ public class StringUtil {
             return "[]";
         }
 
-        String output = "";
+        StringBuilder output = new StringBuilder();
         Queue<TreeNode> nodeQueue = new LinkedList<>();
         nodeQueue.add(root);
         while (!nodeQueue.isEmpty()) {
             TreeNode node = nodeQueue.remove();
 
             if (node == null) {
-                output += "null, ";
+                output.append("null, ");
                 continue;
             }
 
-            output += String.valueOf(node.val) + ", ";
+            output.append(String.valueOf(node.val)).append(", ");
             nodeQueue.add(node.left);
             nodeQueue.add(node.right);
         }
