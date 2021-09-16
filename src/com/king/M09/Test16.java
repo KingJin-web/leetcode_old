@@ -2,6 +2,10 @@ package com.king.M09;
 
 import com.king.util.MyPrint;
 
+import java.util.concurrent.BrokenBarrierException;
+import java.util.concurrent.CyclicBarrier;
+import java.util.concurrent.Semaphore;
+
 /**
  * @program: leetcode
  * @description: 1115. ½»Ìæ´òÓ¡FooBar
@@ -73,6 +77,74 @@ public class Test16 {
                 e.printStackTrace();
             }
         }).start();
+    }
+    //cyclicbarrier
+    static class FooBar2 {
+        private int n;
+        volatile boolean flag=true;
+        CyclicBarrier c1 = new CyclicBarrier(2);
+        public FooBar2(int n) {
+            this.n = n;
+        }
+
+        public void foo(Runnable printFoo) throws InterruptedException {
+            for (int i = 0; i < n; i++) {
+                // printFoo.run() outputs "foo". Do not change or remove this line.
+                printFoo.run();
+                flag=false;
+                try{
+                    c1.await();
+                }catch(BrokenBarrierException e){
+                    e.printStackTrace();
+                }
+            }
+        }
+
+        public void bar(Runnable printBar) throws InterruptedException{
+            for (int i = 0; i < n; i++) {
+                while(flag){}
+                // printBar.run() outputs "bar". Do not change or remove this line.
+                printBar.run();
+                flag=true;
+                try{
+                    c1.await();
+                }catch(BrokenBarrierException e){
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
+
+    //semaphore
+    static class FooBar3 {
+        private int n;
+        Semaphore s1 = new Semaphore(0);
+        Semaphore s2 = new Semaphore(0);
+        public FooBar3(int n) {
+            this.n = n;
+        }
+
+        public void foo(Runnable printFoo) throws InterruptedException {
+
+            for (int i = 0; i < n; i++) {
+
+                // printFoo.run() outputs "foo". Do not change or remove this line.
+                printFoo.run();
+                s1.release();
+                s2.acquire(1);
+            }
+        }
+
+        public void bar(Runnable printBar) throws InterruptedException {
+
+            for (int i = 0; i < n; i++) {
+                s1.acquire(1);
+                // printBar.run() outputs "bar". Do not change or remove this line.
+                printBar.run();
+                s2.release();
+            }
+        }
     }
 }
 
