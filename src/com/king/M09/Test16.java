@@ -16,6 +16,7 @@ import java.util.concurrent.Semaphore;
  * @create: 2021-09-16 19:34
  */
 public class Test16 {
+    //执行用时： 24 ms , 在所有 Java 提交中击败了 31.45% 的用户 内存消耗： 38.3 MB , 在所有 Java 提交中击败了 93.63% 的用户
     static class FooBar {
         private int n;
         private volatile boolean finish = false;
@@ -148,6 +149,6 @@ public class Test16 {
     }
 }
 
-//执行用时： 24 ms , 在所有 Java 提交中击败了 31.45% 的用户 内存消耗： 38.3 MB , 在所有 Java 提交中击败了 93.63% 的用户
+
 
 
