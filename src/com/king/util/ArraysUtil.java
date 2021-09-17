@@ -9,7 +9,7 @@ import java.util.stream.IntStream;
  * @author: King
  * @create: 2021-09-17 19:37
  */
-public class ArraysUtil extends MyPrint {
+public class ArraysUtil{
 
     /**
      * Sort the array from largest to smallest
