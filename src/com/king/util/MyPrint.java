@@ -199,11 +199,11 @@ public class MyPrint {
      * @param obj 对象
      * @return 是否为数组对象，如果为{@code null} 返回空指针
      */
-//    public static boolean isType(Object obj,Class<T> type) {
+//    public static boolean isType(Object obj,Class type) {
 //        if (null == obj) {
 //            throw new NullPointerException("Object is null");
 //        }
-//        return obj instanceof List;
+//        return obj instanceof type;
 //    }
 
     /**
