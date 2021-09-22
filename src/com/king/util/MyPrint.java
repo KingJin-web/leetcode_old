@@ -1,8 +1,11 @@
 package com.king.util;
 
+import MyJava.exam.T1;
 import com.king.Helper;
 
 import java.lang.reflect.Array;
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -18,9 +21,17 @@ public class MyPrint {
     public static void main(String[] args) {
         String[] ss = LeetcodeUtil.stringToStringArray("[\"ale\",\"apple\",\"monkey\",\"plea\"]");
         List<String[]> dictionary = new ArrayList<>();
-        dictionary.add(ss);
-        dictionary.add(new String[]{"a","s0"});
-        MyPrint.print(dictionary);
+//        dictionary.add(ss);
+//        dictionary.add(new String[]{"a", "s0"});
+//        MyPrint.print(dictionary);
+//        MyPrint.print(dictionary, dictionary);
+        print(T1.class);
+    }
+
+    private static void print(List... os) {
+        for (Object o : os) {
+            print(o);
+        }
     }
 
     public static void printf(Object o) {
@@ -89,6 +100,18 @@ public class MyPrint {
         print();
     }
 
+    //    print(MyPrint.class);
+    public static void print(Class<?> c) {
+        Field[] fields = c.getFields();
+        print(fields.length);
+        Method[] methods1 = c.getMethods();
+        print(methods1, 1);
+        print();
+        Method[] methods2 =  c.getDeclaredMethods();
+        print(methods2, 1);
+    }
+
+
     /**
      * https://www.cnblogs.com/fjdingsd/p/5272242.html
      *
@@ -146,7 +169,14 @@ public class MyPrint {
     }
 
     public static void print(Object[] o, int l) {
-
+        if (o.length <= 0){
+            print("null");
+            return;
+        }
+        if (o .length == 1){
+           print(o[0]);
+            return;
+        }
         for (int i = 1; i < o.length; ++i) {
             System.out.print(o[i - 1] + ", ");
             if (i % l == 0) {

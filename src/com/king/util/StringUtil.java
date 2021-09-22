@@ -26,5 +26,16 @@ public class StringUtil {
         return m.find();
     }
 
+    public static void replace(String s1, String s2, String s3) {
+        s1 = s1.replace(s2, s3);
+        MyPrint.print(s1);
+    }
+
+    public static void main(String[] args) {
+        String s = "123456789";
+        replace(s,"123","321");
+        MyPrint.print(s);
+    }
+
 
 }
