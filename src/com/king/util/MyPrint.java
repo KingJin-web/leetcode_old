@@ -208,6 +208,7 @@ public class MyPrint {
         for (List<Integer> l : o) {
             System.out.println(l);
         }
+
     }
 
     public static void printList(List list) {
