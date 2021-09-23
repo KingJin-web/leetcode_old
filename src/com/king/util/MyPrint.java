@@ -108,7 +108,7 @@ public class MyPrint {
             }
             print("=========list-end=========");
         } else {
-            System.out.println(o);
+            println(o);
         }
 
     }
