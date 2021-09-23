@@ -94,7 +94,6 @@ public class MyPrint {
                 }else {
                     list.forEach(MyPrint::println);
                 }
-
             } else {
                 for (Object o1 : list) {
                     int length = Array.getLength(o1);
