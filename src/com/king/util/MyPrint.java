@@ -28,6 +28,11 @@ public class MyPrint {
         print(T1.class);
     }
 
+    //自己封装的输出，可以直接打印数组，list，等
+    public static void println(Object o) {
+        print(o);
+    }
+
     private static void print(List... os) {
         for (Object o : os) {
             print(o);
@@ -107,7 +112,7 @@ public class MyPrint {
         Method[] methods1 = c.getMethods();
         print(methods1, 1);
         print();
-        Method[] methods2 =  c.getDeclaredMethods();
+        Method[] methods2 = c.getDeclaredMethods();
         print(methods2, 1);
     }
 
@@ -169,12 +174,12 @@ public class MyPrint {
     }
 
     public static void print(Object[] o, int l) {
-        if (o.length <= 0){
+        if (o.length <= 0) {
             print("null");
             return;
         }
-        if (o .length == 1){
-           print(o[0]);
+        if (o.length == 1) {
+            print(o[0]);
             return;
         }
         for (int i = 1; i < o.length; ++i) {
@@ -245,7 +250,8 @@ public class MyPrint {
      */
     public static boolean isArray(Object obj) {
         if (null == obj) {
-            throw new NullPointerException("Object check for isArray is null");
+            //throw new NullPointerException("Object check for isArray is null");
+            print("null");
         }
 //        反射 获得类型
         return obj.getClass().isArray();

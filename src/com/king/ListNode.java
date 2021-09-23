@@ -1,5 +1,7 @@
 package com.king;
 
+import com.king.util.MyPrint;
+
 /**
  * @program: leetcode
  * @description: 单链表的定义。
@@ -8,8 +10,8 @@ package com.king;
  */
 public class ListNode {
 
-   public int val;
-   public ListNode next;
+    public Integer val;
+    public ListNode next;
 
     public ListNode() {
 
@@ -72,12 +74,17 @@ public class ListNode {
             System.out.print(this.val + "-->");
             this.next.println();
         } else {
-            System.out.println(this.val);
+            if (this.val != null) {
+                MyPrint.print(this.val);
+            } else {
+                MyPrint.print("null");
+            }
         }
     }
 
     /**
      * 插入
+     *
      * @param num
      */
     public void add(int num) {
@@ -99,8 +106,6 @@ public class ListNode {
         }
         return root;
     }
-
-
 
 
     @Override

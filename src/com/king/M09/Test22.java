@@ -4,6 +4,8 @@ import com.king.ListNode;
 import com.king.util.LeetcodeUtil;
 import com.king.util.MyPrint;
 
+import java.util.Arrays;
+
 /**
  * @program: leetcode
  * @description: 725. ∑÷∏Ù¡¥±Ì
@@ -37,6 +39,7 @@ public class Test22 {
         ListNode[] listNodes = new ListNode[k];
         ListNode curr = head;
         for (int i = 0; i < k && curr != null; ++i) {
+            curr.println();
             listNodes[i] = curr;
             int partSize = quotient + (i < remainder ? 1 : 0);
             for (int j = 1; j < partSize; ++j) {
@@ -56,38 +59,37 @@ public class Test22 {
             listNode1.println();
         }
         listNode = LeetcodeUtil.stringToListNode("[1,2,3]");
-        for (ListNode listNode1 : test22.splitListToParts1(listNode, 5)) {
-            listNode1.println();
-        }
-        listNode = LeetcodeUtil.stringToListNode("[1,2,3,4,5,6,7,8,9,10]");
-        for (ListNode listNode1 : test22.splitListToParts1(listNode, 3)) {
-            listNode1.println();
-        }
+//        for (ListNode listNode1 : test22.splitListToParts1(listNode, 5)) {
+//           // listNode1.println();
+//        }
+        MyPrint.print(Arrays.toString(test22.splitListToParts1(listNode, 5)));
+//        listNode = LeetcodeUtil.stringToListNode("[1,2,3,4,5,6,7,8,9,10]");
+//        for (ListNode listNode1 : test22.splitListToParts1(listNode, 3)) {
+//            listNode1.println();
+//        }
     }
 
     public ListNode[] splitListToParts1(ListNode head, int k) {
-        int n = 0;
-        ListNode temp = head;
-        while (temp != null) {
-            n++;
-            temp = temp.next;
+        ListNode listNode = head;
+        int len = 0;
+        while (listNode != null) {
+            listNode = listNode.next;
+            ++len;
         }
-        int quotient = n / k, remainder = n % k;
-
-        ListNode[] parts = new ListNode[k];
+        int quotient = len / k, remainder = len % k;
+        ListNode[] listNodes = new ListNode[k];
         ListNode curr = head;
-        for (int i = 0; i < k && curr != null; i++) {
-            parts[i] = curr;
+        for (int i = 0; i < k && curr != null; ++i) {
+            listNodes[i] = curr;
             int partSize = quotient + (i < remainder ? 1 : 0);
-            for (int j = 1; j < partSize; j++) {
+            for (int j = 1; j < partSize; ++j) {
                 curr = curr.next;
             }
             ListNode next = curr.next;
             curr.next = null;
             curr = next;
         }
-        return parts;
-
+        return listNodes;
     }
 
 }
