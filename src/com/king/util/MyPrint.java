@@ -19,21 +19,28 @@ import java.util.List;
  */
 public class MyPrint {
     public static void main(String[] args) {
-        String[] ss = LeetcodeUtil.stringToStringArray("[\"ale\",\"apple\",\"monkey\",\"plea\"]");
-        List<String[]> dictionary = new ArrayList<>();
-//        dictionary.add(ss);
-//        dictionary.add(new String[]{"a", "s0"});
-//        MyPrint.print(dictionary);
-//        MyPrint.print(dictionary, dictionary);
-        print(T1.class);
+//        String[] ss = LeetcodeUtil.stringToStringArray("[\"ale\",\"apple\",\"monkey\",\"plea\"]");
+//        List<String[]> dictionary = new ArrayList<>();
+////        dictionary.add(ss);
+////        dictionary.add(new String[]{"a", "s0"});
+////        MyPrint.print(dictionary);
+////        MyPrint.print(dictionary, dictionary);
+//        print(T1.class);
+        List<Integer> list = Helper.getList(1,2,3,6,4,8,9);
+        List<Integer> list1 = Helper.getList(1,3,6,9,2,4);
+        List<List<Integer>> lists = new ArrayList<>();
+        lists.add(list1);
+        lists.add(list);
+        lists.add(list1);
+        print(lists);
     }
 
-    //自己封装的输出，可以直接打印数组，list，等
+
     public static void println(Object o) {
-        print(o);
+        System.out.println(o);
     }
 
-    private static void print(List... os) {
+    public static void print(List... os) {
         for (Object o : os) {
             print(o);
         }
@@ -47,13 +54,14 @@ public class MyPrint {
         System.out.printf(format, args);
     }
 
+    //输出一个空行
     public static void print() {
         printf('\n');
     }
 
     /**
      * https://www.cnblogs.com/fjdingsd/p/5272242.html
-     *
+     * //自己封装的输出，可以直接打印数组，list，等
      * @param o
      */
     public static void print(Object o) {
@@ -70,7 +78,8 @@ public class MyPrint {
                 }
             }
             if (!coll.isEmpty()) {
-                Helper.print(coll);
+//                Helper.print(coll);
+                print(coll);
             }
         } else if (o instanceof List) {
             List list = (List) o;
@@ -80,7 +89,12 @@ public class MyPrint {
                 return;
             }
             if (!isArray(list.get(0))) {
-                list.forEach(System.out::println);
+                if (list.get(0) instanceof Number || list.get(0) instanceof String){
+                    System.out.println(list);
+                }else {
+                    list.forEach(MyPrint::println);
+                }
+
             } else {
                 for (Object o1 : list) {
                     int length = Array.getLength(o1);
@@ -91,7 +105,6 @@ public class MyPrint {
                     }
                     print(coll.toArray());
                 }
-
             }
             print("=========list-end=========");
         } else {
@@ -99,6 +112,7 @@ public class MyPrint {
         }
 
     }
+
 
     public static void printIsLn(Object o) {
         print(o, true);
@@ -185,7 +199,7 @@ public class MyPrint {
         for (int i = 1; i < o.length; ++i) {
             System.out.print(o[i - 1] + ", ");
             if (i % l == 0) {
-                System.out.print('\n');
+                print();
             }
         }
         System.out.println(o[o.length - 1]);
@@ -209,12 +223,9 @@ public class MyPrint {
         print(Arrays.deepToString(chars));
     }
 
-    public static void print(List<List<Integer>> o) {
-        for (List<Integer> l : o) {
-            System.out.println(l);
-        }
-
-    }
+//    public static void print(List<List<Integer>> o) {
+//        o.forEach(MyPrint::print);
+//    }
 
     public static void printList(List list) {
 

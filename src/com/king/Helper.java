@@ -17,6 +17,10 @@ public class Helper {
         return nums;
     }
 
+    public static List<Integer> getList(Integer... s) {
+        return Arrays.asList(s);
+    }
+
     public static char[] getArrays(char... chars) {
         return chars;
     }
