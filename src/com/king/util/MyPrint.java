@@ -26,8 +26,8 @@ public class MyPrint {
 ////        MyPrint.print(dictionary);
 ////        MyPrint.print(dictionary, dictionary);
 //        print(T1.class);
-        List<Integer> list = Helper.getList(1,2,3,6,4,8,9);
-        List<Integer> list1 = Helper.getList(1,3,6,9,2,4);
+        List<Integer> list = Helper.getList(1, 2, 3, 6, 4, 8, 9);
+        List<Integer> list1 = Helper.getList(1, 3, 6, 9, 2, 4);
         List<List<Integer>> lists = new ArrayList<>();
         lists.add(list1);
         lists.add(list);
@@ -62,6 +62,7 @@ public class MyPrint {
     /**
      * https://www.cnblogs.com/fjdingsd/p/5272242.html
      * //自己封装的输出，可以直接打印数组，list，等
+     *
      * @param o
      */
     public static void print(Object o) {
@@ -79,7 +80,7 @@ public class MyPrint {
             }
             if (!coll.isEmpty()) {
 //                Helper.print(coll);
-                print(coll);
+                print(toString(coll.toArray()));
             }
         } else if (o instanceof List) {
             List list = (List) o;
@@ -89,9 +90,9 @@ public class MyPrint {
                 return;
             }
             if (!isArray(list.get(0))) {
-                if (list.get(0) instanceof Number || list.get(0) instanceof String){
-                    System.out.println(list);
-                }else {
+                if (list.get(0) instanceof Number || list.get(0) instanceof String) {
+                    print(toString(list.toArray()));
+                } else {
                     list.forEach(MyPrint::println);
                 }
             } else {
@@ -102,7 +103,7 @@ public class MyPrint {
                         Object value = Array.get(o1, i);
                         coll.add(value);
                     }
-                    print(coll.toArray());
+                    print(toString(coll.toArray()));
                 }
             }
             print("=========list-end=========");
@@ -120,13 +121,22 @@ public class MyPrint {
 
     //    print(MyPrint.class);
     public static void print(Class<?> c) {
-        Field[] fields = c.getFields();
-        print(fields.length);
-        Method[] methods1 = c.getMethods();
-        print(methods1, 1);
-        print();
-        Method[] methods2 = c.getDeclaredMethods();
-        print(methods2, 1);
+        println(c);
+        if (c.isArray()) {
+            println("isArray");
+        }
+        if (c.isInterface()) {
+            println("isInterface");
+        }
+
+
+//        Field[] fields = c.getFields();
+//        print(fields.length);
+//        Method[] methods1 = c.getMethods();
+//        print(methods1, 1);
+//        print();
+//        Method[] methods2 = c.getDeclaredMethods();
+//        print(methods2, 1);
     }
 
 
@@ -203,6 +213,23 @@ public class MyPrint {
         }
         System.out.println(o[o.length - 1]);
 
+    }
+    public static String toString(Object[] a) {
+        if (a == null)
+            return "null";
+
+        int iMax = a.length - 1;
+        if (iMax == -1)
+            return "[]";
+
+        StringBuilder b = new StringBuilder();
+        b.append('[');
+        for (int i = 0; ; i++) {
+            b.append(a[i]);
+            if (i == iMax)
+                return b.append(']').toString();
+            b.append(", ");
+        }
     }
 
     public static void println(int... objects) {
