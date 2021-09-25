@@ -19,6 +19,8 @@ public class Test24 {
         return s.replace(" ", "%20");
     }
 
+    //½£Ö¸ Offer 05. Ìæ»»¿Õ¸ñ
+    //https://leetcode-cn.com/problems/ti-huan-kong-ge-lcof/
     public String replace(String s) {
         StringBuilder sb = new StringBuilder();
         char[] chars = s.toCharArray();
