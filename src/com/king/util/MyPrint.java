@@ -54,19 +54,23 @@ public class MyPrint {
         System.out.printf(format, args);
     }
 
-    //Êä³öÒ»¸ö¿ÕĞĞ
+    //è¾“å‡ºä¸€ä¸ªç©ºè¡Œ
     public static void print() {
         printf('\n');
     }
 
     /**
      * https://www.cnblogs.com/fjdingsd/p/5272242.html
-     * //×Ô¼º·â×°µÄÊä³ö£¬¿ÉÒÔÖ±½Ó´òÓ¡Êı×é£¬list£¬µÈ
+     * //è‡ªå·±å°è£…çš„è¾“å‡ºï¼Œå¯ä»¥ç›´æ¥æ‰“å°æ•°ç»„ï¼Œlistï¼Œç­‰
      *
      * @param o
      */
     public static void print(Object o) {
 
+        if (o == null){
+            print("null");
+            return;
+        }
         if (isArray(o)) {
             List<Object> coll = new ArrayList<>();
             int length = Array.getLength(o);
@@ -191,7 +195,7 @@ public class MyPrint {
             }
             print(toString(coll.toArray(), n));
         } else {
-            print("Õâ²»ÊÇÊı×é !");
+            print("è¿™ä¸æ˜¯æ•°ç»„ !");
             print(o);
         }
     }
@@ -267,10 +271,10 @@ public class MyPrint {
     }
 
     /**
-     * ¶ÔÏóÊÇ·ñÎªÊı×é¶ÔÏó
-     *ÀàĞÍ
-     * @param obj ¶ÔÏó
-     * @return ÊÇ·ñÎªÊı×é¶ÔÏó£¬Èç¹ûÎª{@code null} ·µ»Ø¿ÕÖ¸Õë
+     * å¯¹è±¡æ˜¯å¦ä¸ºæ•°ç»„å¯¹è±¡
+     *ç±»å‹
+     * @param obj å¯¹è±¡
+     * @return æ˜¯å¦ä¸ºæ•°ç»„å¯¹è±¡ï¼Œå¦‚æœä¸º{@code null} è¿”å›ç©ºæŒ‡é’ˆ
      */
 //    public static boolean isType(Object obj,Class type) {
 //        if (null == obj) {
@@ -280,26 +284,26 @@ public class MyPrint {
 //    }
 
     /**
-     * ¶ÔÏóÊÇ·ñÎªÊı×é¶ÔÏó
+     * å¯¹è±¡æ˜¯å¦ä¸ºæ•°ç»„å¯¹è±¡
      *
-     * @param obj ¶ÔÏó
-     * @return ÊÇ·ñÎªÊı×é¶ÔÏó£¬Èç¹ûÎª{@code null} ·µ»Ø¿ÕÖ¸Õë
+     * @param obj å¯¹è±¡
+     * @return æ˜¯å¦ä¸ºæ•°ç»„å¯¹è±¡ï¼Œå¦‚æœä¸º{@code null} è¿”å›ç©ºæŒ‡é’ˆ
      */
     public static boolean isArray(Object obj) {
         if (null == obj) {
             //throw new NullPointerException("Object check for isArray is null");
             print("null");
         }
-//        ·´Éä »ñµÃÀàĞÍ
+//        åå°„ è·å¾—ç±»å‹
         return obj.getClass().isArray();
     }
 
 
     /**
-     * Êı×é·ÖÒ³
+     * æ•°ç»„åˆ†é¡µ
      *
-     * @param o Êı×é
-     * @param l Ã¿Ò³Êı¾İÁ¿
+     * @param o æ•°ç»„
+     * @param l æ¯é¡µæ•°æ®é‡
      * @return
      */
     private static String toString(Object[] o, int l) {
@@ -324,7 +328,7 @@ public class MyPrint {
     }
 
     /**
-     * »ñÈ¡±äÁ¿Êı¾İÀàĞÍ
+     * è·å–å˜é‡æ•°æ®ç±»å‹
      *
      * @param o
      * @return
