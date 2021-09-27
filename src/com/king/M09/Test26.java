@@ -1,5 +1,7 @@
 package com.king.M09;
 
+import com.king.util.MyPrint;
+
 import java.math.BigInteger;
 import java.util.Arrays;
 
@@ -26,5 +28,10 @@ public class Test26 {
 
     public int getSum2(int a, int b) {
         return BigInteger.valueOf(a).add(BigInteger.valueOf(b)).intValue();
+    }
+
+    public static void main(String[] args) {
+        Test26 test26 = new Test26();
+        MyPrint.print(test26.getSum(1,3));
     }
 }
