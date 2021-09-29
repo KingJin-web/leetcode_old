@@ -1,4 +1,4 @@
-package com.py;
+package com.interview.py;
 
 /**
  * @program: leetcode

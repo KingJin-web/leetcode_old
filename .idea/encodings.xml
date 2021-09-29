@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="Encoding" native2AsciiForPropertiesFiles="true" defaultCharsetForPropertiesFiles="UTF-8" addBOMForNewFiles="with BOM under Windows, with no BOM otherwise">
+  <component name="Encoding" native2AsciiForPropertiesFiles="true" defaultCharsetForPropertiesFiles="GBK" addBOMForNewFiles="with BOM under Windows, with no BOM otherwise">
     <file url="file://$PROJECT_DIR$/mysql/奇偶行统计_学生.sql" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/mysql/销售信息管理系统_学生.sql" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/interview/part/part2_1.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/interview/py/Test3.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/interview/py/TimeThread.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/king/AiExperiment/First/计科1801_金鹏_38.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/king/M05/Test23.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/king/M07/Test34.java" charset="UTF-8" />
@@ -13,9 +16,6 @@
     <file url="file://$PROJECT_DIR$/src/com/king/M08/Test8.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/com/king/other/算法题.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/king/util/MyPrint.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/com/part/part2_1.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/com/py/Test3.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/com/py/TimeThread.java" charset="UTF-8" />
     <file url="PROJECT" charset="GBK" />
   </component>
 </project>

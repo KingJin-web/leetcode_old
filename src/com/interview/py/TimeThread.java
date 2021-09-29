@@ -1,11 +1,9 @@
-package com.py;
+package com.interview.py;
 
 
 /*编写TimeThread，负责计时，并打出当前的时间,输出小时分钟秒钟，时间格式要求为：12:35:28。并做测试。*/
 //        程序分析：1.计时功能要使用线程来实现`
 //        　　　　2.显示时间的格式用SimpleDateFormat类*/
-
-import org.apache.tools.ant.taskdefs.Sleep;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

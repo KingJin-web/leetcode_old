@@ -1,15 +1,10 @@
-package com.part;
+package com.interview.part;
 
-
-import com.king.Helper;
 
 import java.io.*;
 import java.nio.charset.Charset;
-import java.util.Scanner;
 import java.util.zip.ZipEntry;
-import java.util.zip.ZipFile;
 import java.util.zip.ZipInputStream;
-import java.util.zip.ZipOutputStream;
 
 /**
  * @program: leetcode

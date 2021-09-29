@@ -1,4 +1,4 @@
-package com.part;
+package com.interview.part;
 
 import com.king.Helper;
 

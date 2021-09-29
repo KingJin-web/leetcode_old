@@ -1,6 +1,4 @@
-package com.part;
-
-import java.math.BigInteger;
+package com.interview.part;
 
 /**
  * @program: leetcode
