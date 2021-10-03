@@ -14,6 +14,8 @@ public class Test1 {
     //original 中下标从 0 到 n - 1 （都 包含 ）的元素构成二维数组的第一行，
     // 下标从 n 到 2 * n - 1 （都 包含 ）的元素构成二维数组的第二行，依此类推。
     //请你根据上述过程返回一个 m x n 的二维数组。如果无法构成这样的二维数组，请你返回一个空的二维数组。
+
+    //执行用时： 3 ms , 在所有 Java 提交中击败了 99.80% 的用户 内存消耗： 48.5 MB , 在所有 Java 提交中击败了 60.49% 的用户
     public int[][] construct2DArray(int[] original, int m, int n) {
         int ln = original.length;
         if (n * m != ln) {

@@ -12,6 +12,8 @@ import com.king.util.MyPrint;
 public class Test2 {
     //给你一个 数字 字符串数组 nums 和一个 数字 字符串 target ，
     //请你返回 nums[i] + nums[j] （两个字符串连接）结果等于 target 的下标 (i, j) （需满足 i != j）的数目。
+
+    //执行用时： 25 ms , 在所有 Java 提交中击败了 73.04% 的用户 内存消耗： 38.9 MB , 在所有 Java 提交中击败了 51.81% 的用户
     public int numOfPairs(String[] nums, String target) {
         int ln = nums.length;
         int result = 0;
