@@ -11,7 +11,7 @@ import java.util.Map;
  * @author: King
  * @create: 2021-10-04 00:03
  */
-public class Test3 {
+public class Test3 extends MyPrint{
     public String fractionToDecimal(int numerator, int denominator) {
         StringBuilder sb = new StringBuilder();
         long a = numerator, b = denominator;
@@ -31,7 +31,10 @@ public class Test3 {
     }
 
     public static void main(String[] args) {
-        Test3 test3 = new Test3();
-        MyPrint.print(test3.fractionToDecimal(1,2));
+//        Test3 test3 = new Test3();
+//        MyPrint.print(test3.fractionToDecimal(1,2));
+
+        printf("\"Hello World!\"");
+
     }
 }
