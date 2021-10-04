@@ -47,7 +47,26 @@ public class Test4 {
         }
         return sb.reverse().toString();
     }
+    public String licenseKeyFormatting3(String s, int k) {
+        char[] chars = s.toCharArray();
+        StringBuilder sb = new StringBuilder();
+        int ln = chars.length;
+        int c = 0;
+        for (int i = ln - 1; i >= 0; --i) {
+            if (chars[i] != '-') {
+                ++c;
+                sb.append(Character.toUpperCase(s.charAt(i)));
+                if (c % k == 0) {
+                    sb.append("-");
+                }
 
+            }
+        }
+        if (sb.length() > 0 && sb.charAt(sb.length() - 1) == '-') {
+            sb.deleteCharAt(sb.length() - 1);
+        }
+        return sb.reverse().toString();
+    }
     public static void main(String[] args) {
         Test4 test4 = new Test4();
         MyPrint.print(test4.licenseKeyFormatting("5F3Z-2e-9-w", 4));

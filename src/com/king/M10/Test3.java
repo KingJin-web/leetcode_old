@@ -8,6 +8,7 @@ import java.util.Map;
 /**
  * @program: leetcode
  * @description: 166. 分数到小数
+ * https://leetcode-cn.com/problems/fraction-to-recurring-decimal/
  * @author: King
  * @create: 2021-10-04 00:03
  */
