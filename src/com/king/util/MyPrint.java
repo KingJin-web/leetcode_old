@@ -58,7 +58,7 @@ public class MyPrint {
 
     /**
      * https://www.cnblogs.com/fjdingsd/p/5272242.html
-     * //自己封装的输出，可以直接打印数组，list，等
+     * //自己封装的输出，可以直接打印数组，list，Iterator等
      *
      * @param o
      */
@@ -80,7 +80,6 @@ public class MyPrint {
                 }
             }
             if (!coll.isEmpty()) {
-//                Helper.print(coll);
                 print(toString(coll.toArray()));
             }
         } else if (o instanceof List) {
@@ -115,7 +114,6 @@ public class MyPrint {
             while (iterator.hasNext()){
                 list.add(iterator.next());
             }
-            
             print(list.toArray());
         } else {
             println(o);
