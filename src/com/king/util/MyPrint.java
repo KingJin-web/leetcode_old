@@ -6,10 +6,7 @@ import com.king.Helper;
 import java.lang.reflect.Array;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.List;
+import java.util.*;
 
 /**
  * @program: leetcode
@@ -67,7 +64,7 @@ public class MyPrint {
      */
     public static void print(Object o) {
 
-        if (o == null){
+        if (o == null) {
             print("null");
             return;
         }
@@ -111,6 +108,15 @@ public class MyPrint {
                 }
             }
             print("=========list-end=========");
+        } else if (o instanceof Iterator) {
+            Iterator<?> iterator = ((Iterator<?>) o);
+
+            List<Object> list = new ArrayList<>();
+            while (iterator.hasNext()){
+                list.add(iterator.next());
+            }
+            
+            print(list.toArray());
         } else {
             println(o);
         }
@@ -218,6 +224,7 @@ public class MyPrint {
         System.out.println(o[o.length - 1]);
 
     }
+
     public static String toString(Object[] a) {
         if (a == null)
             return "null";
