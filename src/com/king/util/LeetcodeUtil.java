@@ -26,12 +26,11 @@ public class LeetcodeUtil {
      * @param n
      * @return
      */
-    private static int getInt(String s, int n) {
+    public static int getInt(String s, int n) {
         int num;
         try {
             num = Integer.parseInt(s);
         } catch (NumberFormatException e) {
-//            MyPrint.printError(e.getMessage());
             logger.info(e.getMessage());
             return n;
         }
