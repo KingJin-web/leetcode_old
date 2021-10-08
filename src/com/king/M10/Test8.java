@@ -20,14 +20,15 @@ public class Test8 {
     //
 
 
-    //执行用时： 16 ms , 在所有 Java 提交中击败了 80.67% 的用户 内存消耗： 46.7 MB , 在所有 Java 提交中击败了 78.14% 的用户
+    //执行用时： 16 ms , 在所有 Java 提交中击败了 80.67% 的用户 内存消耗： 46.5 MB , 在所有 Java 提交中击败了 84.51% 的用户
     public List<String> findRepeatedDnaSequences(String s) {
         int len = s.length();
         if (len < 10) return new ArrayList<>();
         Set<String> res = new HashSet<>();
         Map<String, Integer> map = new HashMap<>();
-        for (int i = 10; i <= len; i++) {
+        for (int i = 10; i <= len; ++i) {
             String sub = s.substring(i - 10, i);
+            //MyPrint.print(sub);
             if (map.containsKey(sub)) {
                 res.add(sub);
             } else {
