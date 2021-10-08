@@ -120,7 +120,9 @@ public class MyPrint {
         }
 
     }
-
+    public static void print(String s) {
+        System.out.println(s);
+    }
 
     public static void printIsLn(Object o) {
         print(o, true);
