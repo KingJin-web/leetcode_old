@@ -111,7 +111,7 @@ public class MyPrint {
             Iterator<?> iterator = ((Iterator<?>) o);
 
             List<Object> list = new ArrayList<>();
-            while (iterator.hasNext()){
+            while (iterator.hasNext()) {
                 list.add(iterator.next());
             }
             print(list.toArray());
@@ -120,6 +120,7 @@ public class MyPrint {
         }
 
     }
+
     public static void print(String s) {
         System.out.println(s);
     }
@@ -241,6 +242,11 @@ public class MyPrint {
                 return b.append(']').toString();
             b.append(", ");
         }
+    }
+
+    public static void printA(int[][] a) {
+        print("aaa");
+        print(Arrays.deepToString(a));
     }
 
     public static void println(int... objects) {
