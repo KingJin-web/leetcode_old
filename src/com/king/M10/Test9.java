@@ -60,22 +60,24 @@ public class Test9 {
         SummaryRanges obj = new SummaryRanges();
         obj.addNum(10);
         int[][] param_2 = obj.getIntervals();
+
         SummaryRanges summaryRanges = new SummaryRanges();
         summaryRanges.addNum(1);      // arr = [1]
-        param_2 = summaryRanges.getIntervals(); // 返回 [[1, 1]]
-        MyPrint.printA(param_2);
+        // 返回 [[1, 1]]
+        MyPrint.print(summaryRanges.getIntervals(),true);
+
         summaryRanges.addNum(3);      // arr = [1, 3]
-        param_2 = summaryRanges.getIntervals(); // 返回 [[1, 1], [3, 3]]
-        MyPrint.printA(param_2);
+        // 返回 [[1, 1], [3, 3]]
+        MyPrint.print(summaryRanges.getIntervals());
         summaryRanges.addNum(7);      // arr = [1, 3, 7]
-        param_2 = summaryRanges.getIntervals(); // 返回 [[1, 1], [3, 3], [7, 7]]
-        MyPrint.printA(param_2);
+        // 返回 [[1, 1], [3, 3], [7, 7]]
+        MyPrint.print(summaryRanges.getIntervals());
         summaryRanges.addNum(2);      // arr = [1, 2, 3, 7]
-        param_2 = summaryRanges.getIntervals(); // 返回 [[1, 3], [7, 7]]
-        MyPrint.printA(param_2);
+        // 返回 [[1, 3], [7, 7]]
+        MyPrint.print(summaryRanges.getIntervals());
         summaryRanges.addNum(6);      // arr = [1, 2, 3, 6, 7]
-        param_2 = summaryRanges.getIntervals(); // 返回 [[1, 3], [6, 7]]
-        MyPrint.printA(param_2);
+        // 返回 [[1, 3], [6, 7]]
+        MyPrint.print(summaryRanges.getIntervals());
     }
 
     //输入：

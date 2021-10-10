@@ -59,7 +59,12 @@ public class LeetcodeUtil {
         int[] output = new int[parts.length];
         for (int index = 0; index < parts.length; index++) {
             String part = parts[index].trim();
-            output[index] = Integer.parseInt(part);
+            if (part.equals("null")){
+                output[index] = 0;
+            }else {
+                output[index] = Integer.parseInt(part);
+            }
+
         }
         return output;
     }

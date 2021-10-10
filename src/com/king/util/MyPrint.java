@@ -69,6 +69,8 @@ public class MyPrint {
             return;
         }
         if (isArray(o)) {
+            //print(Arrays.deepToString(o));
+
             List<Object> coll = new ArrayList<>();
             int length = Array.getLength(o);
             for (int i = 0; i < length; i++) {
@@ -79,9 +81,11 @@ public class MyPrint {
                     coll.add(value);
                 }
             }
+
             if (!coll.isEmpty()) {
                 print(toString(coll.toArray()));
             }
+
         } else if (o instanceof List) {
             List list = (List) o;
             print("=========list-start=========");
@@ -245,7 +249,6 @@ public class MyPrint {
     }
 
     public static void printA(int[][] a) {
-        print("aaa");
         print(Arrays.deepToString(a));
     }
 
@@ -352,5 +355,9 @@ public class MyPrint {
 
     public static void printError(String message) {
         System.err.println(message);
+    }
+
+    public static void printf(int ... nums) {
+        print(nums);
     }
 }
