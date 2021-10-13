@@ -36,7 +36,7 @@ public class Test14 {
     }
 
     // 执行用时： 0 ms , 在所有 Java 提交中击败了 100.00% 的用户 内存消耗： 38.5 MB , 在所有 Java 提交中击败了 85.00% 的用户
-    public int peakIndexInMountainArray(int[] arr) {
+    public int peakIndexInMountainArray2(int[] arr) {
         for (int i = 1; i < arr.length; i++) {
             if (arr[i] > arr[i - 1] && arr[i] > arr[i + 1]) {
                 return i;
@@ -44,6 +44,26 @@ public class Test14 {
         }
         return 0;
     }
+    //时间复杂度：O(n)
+    //空间复杂度：O(1)
+
+
+    public int peakIndexInMountainArray(int[] arr) {
+        int n = arr.length;
+        int left = 1, right = n - 2, ans = 0;
+        while (left <= right) {
+            int mid = (left + right) / 2;
+            if (arr[mid] > arr[mid + 1]) {
+                ans = mid;
+                right = mid - 1;
+            } else {
+                left = mid + 1;
+            }
+        }
+        return ans;
+    }
+    //时间复杂度：O(\log n)
+    //空间复杂度：O(1)
 
     public static void main(String[] args) {
         Test14 test14 = new Test14();
