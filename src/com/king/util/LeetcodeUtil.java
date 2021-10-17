@@ -223,13 +223,13 @@ public class LeetcodeUtil {
         }
 
         if (node.right != null) {
-            prettyPrintTree(node.right, prefix + (isLeft ? "©¦   " : "    "), false);
+            prettyPrintTree(node.right, prefix + (isLeft ? "â”‚   " : "    "), false);
         }
 
-        System.out.println(prefix + (isLeft ? "©¸©¤©¤ " : "©°©¤©¤ ") + node.val);
+        System.out.println(prefix + (isLeft ? "â””â”€â”€ " : "â”Œâ”€â”€ ") + node.val);
 
         if (node.left != null) {
-            prettyPrintTree(node.left, prefix + (isLeft ? "    " : "©¦   "), true);
+            prettyPrintTree(node.left, prefix + (isLeft ? "    " : "â”‚   "), true);
         }
     }
 
