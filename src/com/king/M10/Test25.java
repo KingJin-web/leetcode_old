@@ -1,5 +1,8 @@
 package com.king.M10;
 
+import com.king.Helper;
+import com.king.util.MyPrint;
+
 /**
  * @program: leetcode
  * @description: 496. 下一个更大元素 I
@@ -25,6 +28,11 @@ public class Test25 {
             res[i] = k < n ? nums2[k] : -1;
         }
         return res;
+    }
+
+    public static void main(String[] args) {
+        Test25 test25 = new Test25();
+        MyPrint.print(test25.nextGreaterElement(Helper.getArrays(4,1,2),Helper.getArrays(1,3,4,2)));
     }
 
 }
