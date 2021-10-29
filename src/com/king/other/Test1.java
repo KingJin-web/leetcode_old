@@ -43,12 +43,10 @@ public class Test1 {
         return arr;
     }
 
-//    public static void main(String[] args) {
-//        Test1 test1 = new Test1();
-//        MyPrint.print(test1.isFib(test1.fib(10)));
-//        MyPrint.print(test1.isFib(Helper.getArrays(1,2,3,4)));
-//    }
-
     public static void main(String[] args) {
+        Test1 test1 = new Test1();
+        MyPrint.print(test1.isFib(test1.fib(10)));
+        MyPrint.print(test1.isFib(Helper.getArrays(1,2,3,4)));
     }
+
 }
