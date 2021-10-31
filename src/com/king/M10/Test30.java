@@ -2,6 +2,7 @@ package com.king.M10;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Scanner;
 
 /**
  * @program: leetcode
