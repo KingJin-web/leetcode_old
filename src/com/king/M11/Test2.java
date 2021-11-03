@@ -12,7 +12,8 @@ import com.king.util.LeetcodeUtil;
  */
 public class Test2 {
 
-    //执行用时： 0 ms , 在所有 Java 提交中击败了 100.00% 的用户 内存消耗： 37.8 MB , 在所有 Java 提交中击败了 54.53% 的用户
+    //执行用时： 0 ms , 在所有 Java 提交中击败了 100.00% 的用户 内存消耗： 37.8 MB ,
+    //在所有 Java 提交中击败了 54.53% 的用户
     public void deleteNode(ListNode node) {
         if(node == null || node.next == null) return;
         node.val = node.next.val;
