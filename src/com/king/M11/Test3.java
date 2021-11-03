@@ -45,4 +45,8 @@ public class Test3 {
         }
         return res;
     }
+
+    public static void main(String[] args) {
+
+    }
 }
