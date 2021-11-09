@@ -1,6 +1,8 @@
 package com.king.M11;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -40,4 +42,21 @@ public class Test8 {
         return A + "A" + B + "B";
     }
 
+
+    public String listToString(List<String> lists){
+        StringBuilder sb = new StringBuilder();
+        int i = 0;
+        for (;i < lists.size() - 1;++i){
+            sb.append(lists.get(i)).append(", ");
+        }
+        sb.append(lists.get(i));
+        return sb.toString();
+    }
+
+    public static void main(String[] args) {
+        Test8 mainActivity = new Test8();
+        List<String> list = new ArrayList<>();
+        list.add("a");list.add("a");list.add("a");list.add("a");
+        System.out.println(mainActivity.listToString(list));
+    }
 }
