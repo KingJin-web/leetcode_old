@@ -15,6 +15,8 @@ import java.util.*;
  * @create: 2021-09-04 11:26
  */
 public class MyPrint {
+    static List<List<Integer>> lists = new ArrayList<>();
+   static List<Integer> list2;
     public static void main(String[] args) {
 //        String[] ss = LeetcodeUtil.stringToStringArray("[\"ale\",\"apple\",\"monkey\",\"plea\"]");
 //        List<String[]> dictionary = new ArrayList<>();
@@ -25,10 +27,12 @@ public class MyPrint {
 //        print(T1.class);
         List<Integer> list = Helper.getList(1, 2, 3, 6, 4, 8, 9);
         List<Integer> list1 = Helper.getList(1, 3, 6, 9, 2, 4);
-        List<List<Integer>> lists = new ArrayList<>();
+
+
         lists.add(list1);
         lists.add(list);
         lists.add(list1);
+        lists.add(list2);
         print(lists);
     }
 
@@ -357,7 +361,7 @@ public class MyPrint {
         System.err.println(message);
     }
 
-    public static void printf(int ... nums) {
+    public static void printf(int... nums) {
         print(nums);
     }
 }
