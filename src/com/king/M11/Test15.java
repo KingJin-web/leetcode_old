@@ -2,6 +2,9 @@ package com.king.M11;
 
 import com.king.util.MyPrint;
 
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  * @program: leetcode
  * @description: 319. 灯泡开关
@@ -49,7 +52,7 @@ class Solution {
         int bottom = Integer.MAX_VALUE;
         int n = r.length;
 
-        Set<String>set = new HashSet<>();
+        Set<String> set = new HashSet<>();
         int sum = 0; // 小矩形相加
         for(int i  =  0; i < n; i++){
             int []t = r[i];
@@ -92,7 +95,3 @@ class Solution {
     }
 }
 
-作者：LittleSongFly
-        链接：https://leetcode-cn.com/problems/perfect-rectangle/solution/xiao-song-man-bu-ji-suan-wei-zhi-yu-mian-ymi7/
-        来源：力扣（LeetCode）
-        著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
