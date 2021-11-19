@@ -1,6 +1,8 @@
 package com.king.util;
 
 import java.util.Arrays;
+import java.util.Map;
+import java.util.regex.Matcher;
 import java.util.stream.IntStream;
 
 /**
@@ -9,7 +11,7 @@ import java.util.stream.IntStream;
  * @author: King
  * @create: 2021-09-17 19:37
  */
-public class ArraysUtil{
+public class ArraysUtil {
 
     /**
      * Sort the array from largest to smallest
@@ -39,5 +41,18 @@ public class ArraysUtil{
         int[] a = {1, 2, 3, 4, 11, 23, 1, 33};
         sortBToS(a);
         MyPrint.print(a);
+    }
+
+    public static void sort(int[] a) {
+        int n = a.length;
+        for (int i = 0; i < n - 1; ++i) {
+            for (int j = 0; j < n - 1 - i; ++j) {
+                if (a[j] > a[i]){
+                    int t = a[j];
+                    a[j] = a[i];
+                    a[i] = t;
+                }
+            }
+        }
     }
 }
