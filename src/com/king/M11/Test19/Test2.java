@@ -36,6 +36,7 @@ public class Test2 {
             return new int[]{list.get(0), list.get(1)};
         }
 
+
     }
 
     public static int[] t2(int[] a) {
