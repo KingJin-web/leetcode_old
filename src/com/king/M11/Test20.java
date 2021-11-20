@@ -25,12 +25,12 @@ public class Test20 {
 
     public int findLHS(int[] nums) {
         Arrays.sort(nums);
-        int begin = 0,res = 0;
-        for(int end = 0;end < nums.length;end++){
-            while(nums[end] - nums[begin] > 1)
+        int begin = 0, res = 0;
+        for (int end = 0; end < nums.length; end++) {
+            while (nums[end] - nums[begin] > 1)
                 begin++;
-            if(nums[end] - nums[begin] == 1)
-                res = Math.max(res,end - begin + 1);
+            if (nums[end] - nums[begin] == 1)
+                res = Math.max(res, end - begin + 1);
         }
         return res;
     }
@@ -41,7 +41,7 @@ public class Test20 {
         //解释：最长的和谐子序列是 [3,2,2,2,3]
 
         Test20 test20 = new Test20();
-       int a =  test20.findLHS(LeetcodeUtil.stringToIntegerArray("[1,3,2,2,5,2,3,7]"));
+        int a = test20.findLHS(LeetcodeUtil.stringToIntegerArray("[1,3,2,2,5,2,3,7]"));
         MyPrint.print(a);
     }
 }
