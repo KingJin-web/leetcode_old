@@ -1,7 +1,6 @@
 package music;
 
 
-
 import java.applet.Applet;
 import java.applet.AudioClip;
 import java.io.File;
@@ -25,13 +24,7 @@ public class Main {
 //        AudioStream as=new AudioStream(fileau);
 //        AudioPlayer.player.start(as);
 
-        Scanner scanner = new Scanner(System.in);
-        File sound1=new File("src/sounds/a.wav");
-        URL url = sound1.toURI().toURL();
-        System.out.println(url);
-        AudioClip sound_choose1= Applet.newAudioClip(url);
-        sound_choose1.play();   //播放音效
-        scanner.nextInt();
+        MusicUtil.playWav("src/sounds/a.wav");
 
 
     }

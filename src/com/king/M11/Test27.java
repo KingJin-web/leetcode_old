@@ -16,6 +16,7 @@ public class Test27 {
 
         public int[] flip() {
 
+            return null;
         }
 
         public void reset() {
