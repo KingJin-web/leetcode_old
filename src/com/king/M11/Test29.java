@@ -17,9 +17,12 @@ import java.util.List;
 public class Test29 {
 
     //执行用时： 379 ms , 在所有 Java 提交中击败了 28.24% 的用户 内存消耗： 74.6 MB , 在所有 Java 提交中击败了 21.18% 的用户
-    public int[] kthSmallestPrimeFraction(int[] arr, int k) {
+
+
+
+     int[] kthSmallestPrimeFraction(int[] arr, int k) {
         int n = arr.length;
-        List<int[]> frac = new ArrayList<int[]>();
+        List<int[]> frac = new ArrayList<>();
         for (int i = 0; i < n; ++i) {
             for (int j = i + 1; j < n; ++j) {
                 frac.add(new int[]{arr[i], arr[j]});
@@ -37,7 +40,10 @@ public class Test29 {
         //很明显第三个最小的分数是 2/5
      Test29 test29 = new Test29();
         MyPrint.print(test29.kthSmallestPrimeFraction(LeetcodeUtil.stringToIntegerArray("[1,2,3,5]"),3));
+
     }
+
+
 }
 
 
