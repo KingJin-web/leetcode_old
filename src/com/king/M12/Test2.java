@@ -69,7 +69,7 @@ public class Test2 {
         for (int num : nums) {
             list.add(num);
         }
-        sort(nums);
+        sort(nums,n);
         String[] strings = new String[n];
 
 //        MyPrint.print(list);
@@ -85,10 +85,10 @@ public class Test2 {
         return strings;
     }
 
-    public void sort(int[] arr) {
+    public void sort(int[] arr,int n) {
         int temp;//定义一个临时变量
-        for (int i = 0; i < arr.length - 1; i++) {//冒泡趟数
-            for (int j = 0; j < arr.length - i - 1; j++) {
+        for (int i = 0; i <n - 1; ++i) {//冒泡趟数
+            for (int j = 0; j < n - i - 1; ++j) {
                 if (arr[j + 1] > arr[j]) {
                     temp = arr[j];
                     arr[j] = arr[j + 1];
