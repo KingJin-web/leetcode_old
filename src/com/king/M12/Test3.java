@@ -12,7 +12,7 @@ import java.util.PriorityQueue;
 public class Test3 {
     public int largestSumAfterKNegations(int[] nums, int k) {
         int n = nums.length, idx = 0;
-        PriorityQueue<Integer> q = new PriorityQueue<>((a, b)->nums[a]-nums[b]);
+        PriorityQueue<Integer> q = new PriorityQueue<>();
         boolean zero = false;
         for (int i = 0; i < n; i++) {
             if (nums[i] < 0) q.add(i);
