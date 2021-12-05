@@ -3,9 +3,7 @@ package com.king.util;
 import MyJava.exam.T1;
 import com.king.Helper;
 
-import java.lang.reflect.Array;
-import java.lang.reflect.Field;
-import java.lang.reflect.Method;
+import java.lang.reflect.*;
 import java.util.*;
 
 /**
@@ -15,26 +13,8 @@ import java.util.*;
  * @create: 2021-09-04 11:26
  */
 public class MyPrint {
-    static List<List<Integer>> lists = new ArrayList<>();
-   static List<Integer> list2;
-    public static void main(String[] args) {
-//        String[] ss = LeetcodeUtil.stringToStringArray("[\"ale\",\"apple\",\"monkey\",\"plea\"]");
-//        List<String[]> dictionary = new ArrayList<>();
-////        dictionary.add(ss);
-////        dictionary.add(new String[]{"a", "s0"});
-////        MyPrint.print(dictionary);
-////        MyPrint.print(dictionary, dictionary);
-//        print(T1.class);
-        List<Integer> list = Helper.getList(1, 2, 3, 6, 4, 8, 9);
-        List<Integer> list1 = Helper.getList(1, 3, 6, 9, 2, 4);
 
 
-        lists.add(list1);
-        lists.add(list);
-        lists.add(list1);
-        lists.add(list2);
-        print(lists);
-    }
 
 
     public static void println(Object o) {
@@ -146,6 +126,42 @@ public class MyPrint {
         }
         if (c.isInterface()) {
             println("isInterface");
+        }
+
+
+        try {
+            // 根据传入的类的全名来创建Class对象,注意必须是全名
+
+            // 得到包路径
+            System.out.println("package " + c.getPackage().getName() + ";\n");
+            // 得到类修饰符
+            System.out.print(Modifier.toString(c.getModifiers()));
+            //得到类名
+            System.out.print(" class " + c.getSimpleName());
+            //得到父类名
+            System.out.print(" extends " + c.getSuperclass().getSimpleName());
+            //得到类实现的接口数组
+            Class[] inters = c.getInterfaces();
+            if (inters.length > 0) {
+                System.out.print(" implements ");
+                for (int i = 0; i < inters.length; i++) {
+                    System.out.print(inters[i].getSimpleName());
+                    if (i < inters.length - 1) {
+                        System.out.print(", ");
+                    }
+                }
+            }
+            System.out.println(" {");
+            // 获取类属性
+            printField(c);
+            // 获取类构造器
+            printConstructor(c);
+            // 获取类方法
+            printMethods(c);
+            System.out.println(" }");
+
+        } catch (Exception e) {
+            e.printStackTrace();
         }
 
 
@@ -363,5 +379,119 @@ public class MyPrint {
 
     public static void printf(int... nums) {
         print(nums);
+    }
+
+    public static void main(String[] args) {
+        Class c = null;
+        try {
+            // 根据传入的类的全名来创建Class对象,注意必须是全名
+            c = Class.forName("test.Person");
+            // 得到包路径
+            System.out.println("package " + c.getPackage().getName() + ";\n");
+            // 得到类修饰符
+            System.out.print(Modifier.toString(c.getModifiers()));
+            //得到类名
+            System.out.print(" class " + c.getSimpleName());
+            //得到父类名
+            System.out.print(" extends " + c.getSuperclass().getSimpleName());
+            //得到类实现的接口数组
+            Class[] inters = c.getInterfaces();
+            if (inters.length > 0) {
+                System.out.print(" implements ");
+                for (int i = 0; i < inters.length; i++) {
+                    System.out.print(inters[i].getSimpleName());
+                    if (i < inters.length - 1) {
+                        System.out.print(", ");
+                    }
+                }
+            }
+            System.out.println(" {");
+            // 获取类属性
+            printField(c);
+            // 获取类构造器
+            printConstructor(c);
+            // 获取类方法
+            printMethods(c);
+            System.out.println(" }");
+
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static void printConstructor(Class c){
+        Constructor[] cs = c.getConstructors();
+        for (int i = 0; i < cs.length; i++) {
+            System.out.println();
+            System.out.print("\t");
+            // 得到整数形式构造函数修饰符，使用Modifier进行解码
+            System.out.print(Modifier.toString(cs[i].getModifiers()) + " ");
+            // 得到方法名
+            System.out.print(cs[i].getName() + "(");
+            // 得到方法参数数组
+            Class[] paras = cs[i].getParameterTypes();
+            for (int j = 0; j < paras.length; j++) {
+                System.out.print(paras[j].getSimpleName() + " arg" + j);
+                if (j < paras.length - 1) {
+                    System.out.print(", ");
+                }
+            }
+            System.out.print(")");
+            System.out.println(" {");
+            System.out.println("\t\t\\\\方法体");
+            System.out.println("\t}");
+        }
+    }
+
+    private static void printField(Class c) {
+        // 得到属性数组
+        Field[] fs = c.getDeclaredFields();
+        for (int i = 0; i < fs.length; i++) {
+            System.out.print("\t");
+            // 得到整数形式属性修饰符，使用Modifier进行解码
+            System.out.print(Modifier.toString(fs[i].getModifiers()) + " ");
+            // 得到属性类型
+            System.out.print(fs[i].getType().getSimpleName() + " ");
+            // 得到属性名
+            System.out.println(fs[i].getName() + ";");
+        }
+    }
+
+    public static void printMethods(Class c) {
+        // 得到方法数组
+        Method[] md = c.getMethods();
+        for (int i = 0; i < md.length; i++) {
+            System.out.println();
+            System.out.print("\t");
+            // 得到整数形式方法修饰符，使用Modifier进行解码
+            System.out.print(Modifier.toString(md[i].getModifiers()) + " ");
+            // 得到方法返回类型
+            System.out.print(md[i].getGenericReturnType() + " ");
+            // 得到方法名
+            System.out.print(md[i].getName() + "(");
+            // 得到方法参数数组
+            Class[] paras = md[i].getParameterTypes();
+            for (int j = 0; j < paras.length; j++) {
+                System.out.print(paras[j].getSimpleName() + " arg" + j);
+                if (j < paras.length - 1) {
+                    System.out.print(", ");
+                }
+            }
+            System.out.print(")");
+            // 得到抛出的异常类数组
+            Class[] exceps = md[i].getExceptionTypes();
+            if (exceps.length > 0) {
+                System.out.print(" throws ");
+                for (int k = 0; k < exceps.length; k++) {
+                    System.out.print(exceps[k].getSimpleName());
+                    if (k < exceps.length - 1) {
+                        System.out.print(", ");
+                    }
+                }
+            }
+            System.out.println(" {");
+            System.out.println("\t\t\\\\方法体");
+            System.out.println("\t}");
+        }
     }
 }

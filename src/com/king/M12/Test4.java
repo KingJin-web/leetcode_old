@@ -1,5 +1,8 @@
 package com.king.M12;
 
+import com.king.Helper;
+import com.king.util.MyPrint;
+
 /**
  * @program: leetcode
  * @description: 383. Êê½ðÐÅ
@@ -21,6 +24,13 @@ public class Test4 {
             }
         }
         return true;
+    }
+
+    public static void main(String[] args) {
+        Test4 test4 = new Test4();
+
+      //  MyPrint.main(Helper.getArrays("123","123"));
+        MyPrint.print(test4.getClass());
     }
 
 }
