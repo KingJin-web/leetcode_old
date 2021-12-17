@@ -18,6 +18,7 @@ public class Test17 {
     //请你计算 最多 能喝到多少瓶酒。
 
 
+    //执行用时： 0 ms , 在所有 Java 提交中击败了 100.00% 的用户 内存消耗： 35.2 MB , 在所有 Java 提交中击败了 44.68% 的用户
     public int numWaterBottles(int numBottles, int numExchange) {
         int bottle = numBottles, ans = numBottles;
         while (bottle >= numExchange) {
