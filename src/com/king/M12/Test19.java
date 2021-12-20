@@ -2,6 +2,8 @@ package com.king.M12;
 
 import com.king.util.MyPrint;
 
+import java.math.BigInteger;
+
 /**
  * @program: leetcode
  * @description: 997. 找到小镇的法官
@@ -29,6 +31,8 @@ public class Test19 {
                 return i;
             }
         }
+
+
         return -1;
     }
 
@@ -37,8 +41,25 @@ public class Test19 {
 //        输入：n = 4, trust = [[1,3],[1,4],[2,3],[2,4],[4,3]]
 //        输出：3
         int n = 4;
-        int [][] trust = new int[][]{{1,3},{1,4},{2,3},{2,4},{4,3}};
-        MyPrint.print(test19.findJudge(n,trust));
+        int[][] trust = new int[][]{{1, 3}, {1, 4}, {2, 3}, {2, 4}, {4, 3}};
+        MyPrint.print(test19.findJudge(n, trust));
+
+
+        BigInteger num = BigInteger.valueOf(12);
+
+        System.out.println(fact(101));
+
+    }
+
+    //采用循环连乘法
+    public static BigInteger fact(int num) {
+        int temp = 1;
+        BigInteger factorial = BigInteger.valueOf(1);
+        while (num >= temp) {
+            factorial = factorial.multiply(BigInteger.valueOf(temp));
+            temp++;
+        }
+        return factorial;
     }
 
 }
