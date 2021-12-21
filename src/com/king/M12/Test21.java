@@ -4,6 +4,8 @@ import com.king.util.MyPrint;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -38,13 +40,13 @@ public class Test21 {
     }
 
 
-
     //执行用时： 113 ms , 在所有 Java 提交中击败了 5.11% 的用户 内存消耗： 41.8 MB , 在所有 Java 提交中击败了 5.11% 的用户
-    public int dayOfYear(String date) {
+    public int dayOfYear2(String date) {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         try {
-            long time1 = sdf.parse(date).getTime();
-            long time2 = getYearFirstDay(sdf.parse(date).getYear() + 1900).getTime();
+            Date time = sdf.parse(date);
+            long time1 = time.getTime();
+            long time2 = getYearFirstDay(Integer.parseInt(date.substring(0, 4)));
             return (int) ((time1 - time2) / (24 * 60 * 60 * 1000)) + 1;
         } catch (ParseException e) {
             e.printStackTrace();
@@ -56,15 +58,19 @@ public class Test21 {
     /**
      * 获取某年第一天日期开始时刻
      *
-     * @param year 年份
+     * @param year 时间
      * @return Date
      */
-    public static Date getYearFirstDay(int year) {
+    public static long getYearFirstDay(int year) {
         Calendar cal = Calendar.getInstance();
         cal.clear();
-        cal.set(Calendar.YEAR, year);
-        return cal.getTime();
+        cal.set(Calendar.YEAR,year);
+        return cal.getTimeInMillis();
     }
 
-
+    //执行用时： 33 ms , 在所有 Java 提交中击败了 10.95% 的用户 内存消耗： 40 MB , 在所有 Java 提交中击败了 9.49% 的用户
+    private static final DateTimeFormatter FORMAT = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+    public int dayOfYear(String date) {
+        return LocalDate.parse(date, FORMAT).getDayOfYear();
+    }
 }
