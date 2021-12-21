@@ -1,5 +1,6 @@
 package com.king.M12;
 
+import java.awt.*;
 import java.util.Arrays;
 
 /**
@@ -34,6 +35,11 @@ public class Test20 {
     }
 
     public static void main(String[] args) {
+
+        Frame frame = new Frame();
+        Panel panel = new Panel();
+
+        frame.add(panel);
 
     }
 }

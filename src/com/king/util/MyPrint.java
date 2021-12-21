@@ -1,8 +1,5 @@
 package com.king.util;
 
-import MyJava.exam.T1;
-import com.king.Helper;
-
 import java.lang.reflect.*;
 import java.util.*;
 
@@ -26,6 +23,8 @@ public class MyPrint {
             print(o);
         }
     }
+
+
 
     public static void printf(Object o) {
         System.out.print(o);
