@@ -69,8 +69,7 @@ public class Test21 {
     }
 
     //执行用时： 33 ms , 在所有 Java 提交中击败了 10.95% 的用户 内存消耗： 40 MB , 在所有 Java 提交中击败了 9.49% 的用户
-    private static final DateTimeFormatter FORMAT = DateTimeFormatter.ofPattern("yyyy-MM-dd");
     public int dayOfYear(String date) {
-        return LocalDate.parse(date, FORMAT).getDayOfYear();
+        return LocalDate.parse(date, DateTimeFormatter.ofPattern("yyyy-MM-dd")).getDayOfYear();
     }
 }
