@@ -8,6 +8,9 @@ import java.util.Set;
 /**
  * @program: leetcode
  * @description: 1044. 最长重复子串
+ * 来源：力扣（LeetCode）
+ * 链接：https://leetcode-cn.com/problems/longest-duplicate-substring
+ * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  * @author: King
  * @create: 2021-12-23 22:07
  */
@@ -15,12 +18,6 @@ public class Test23 {
     //给你一个字符串 s ，考虑其所有 重复子串 ：即，s 的连续子串，在 s 中出现 2 次或更多次。这些出现之间可能存在重叠。
     //
     //返回 任意一个 可能具有最长长度的重复子串。如果 s 不含重复子串，那么答案为 "" 。
-    //
-    // 
-    //
-    //来源：力扣（LeetCode）
-    //链接：https://leetcode-cn.com/problems/longest-duplicate-substring
-    //著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 
 
 
@@ -113,8 +110,9 @@ public class Test23 {
         }
         return ans;
     }
+
     public static void main(String[] args) {
-        try (Scanner input = new Scanner(System.in)){
+        try (Scanner input = new Scanner(System.in)) {
 
             double x = input.nextDouble();
             double y = input.nextDouble();
