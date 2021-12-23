@@ -41,5 +41,7 @@ public class Test3 {
     public static void main(String[] args) {
         File file = new File("D:\\test\\src\\test.txt");
         System.out.println(test(file));
+
+
     }
 }
