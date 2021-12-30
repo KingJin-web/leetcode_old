@@ -1,5 +1,10 @@
 package com.king.M12;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Scanner;
+
 /**
  * @program: leetcode
  * @description:
@@ -12,7 +17,23 @@ public class Test29 {
     //
     //nums[a] + nums[b] + nums[c] == nums[d] £¬ÇÒ
     //a < b < c < d
+
+
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+      try(Scanner scanner = new Scanner(System.in)){
+          int n = scanner.nextInt();
+          List<Integer> nums = new ArrayList<>(n);
+          for(int i = 0; i < n; i++){
+              nums.add(scanner.nextInt());
+          }
+
+          int max = Collections.max(nums);
+          int min = Collections.min(nums);
+          int a = Math.abs(max - min);
+          int b = Math.abs(nums.indexOf(max) - nums.indexOf(min));
+          System.out.println(a + " " +b);
+      }
     }
+
+
 }
